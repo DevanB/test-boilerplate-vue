@@ -1,0 +1,21 @@
+//Neat init settings
+$grid-columns: 18;
+$gutter: 1.25em;
+$max-width: 100%;
+$visual-grid: false !global;
+$visual-grid-color: rgba(0, 0, 0, 1) !global;
+$visual-grid-index: front !global;
+$visual-grid-opacity: .11 !global;
+
+//Breakpoints
+$small-desktop-down: new-breakpoint( max-width 955px 18  ); // mamabear-down
+$tablet-portrait: new-breakpoint( min-width 783px  18  ); // Tablet Portrait babybear
+$small-desktop: new-breakpoint( min-width 956px  18  ); // Small desktop or tablet landscape mamabear
+$widescreen-desktop: new-breakpoint( min-width 1264px 18  ); // Widescreen desktop papabear
+
+//Fine-tuning Breakpoints
+$px1024: new-breakpoint( min-width 1024px 18  );
+$px1144: new-breakpoint( min-width 1144px 18  );
+$px1440: new-breakpoint( min-width 1440px 18  );
+$px1660: new-breakpoint( min-width 1660px 18  );
+$px1900: new-breakpoint( min-width 1900px 18  );

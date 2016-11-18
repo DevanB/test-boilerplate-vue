@@ -1,0 +1,12 @@
+//--- Main Stylesheet ---//
+
+// Libraries
+@import 'node_modules/mathsass/dist/math';
+@import 'node_modules/bourbon/app/assets/stylesheets/bourbon';
+@import 'node_modules/bourbon-neat/app/assets/stylesheets/neat-helpers';
+@import './partials/grid-settings'; // setup neat grid before neat imports
+@import 'node_modules/bourbon-neat/app/assets/stylesheets/neat';
+
+// Partials
+@import './partials/_reset';
+@import './partials/_settings';

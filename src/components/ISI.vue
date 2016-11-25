@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div v-if="!footer">
+  <div id='sidebar'>
+    <div v-if='!footer'>
       <h3>INDICATION AND USAGE</h3>
       <p>SELZENTRY, in combination with other antiretroviral agents, is indicated for adult patients infected with only CCR5-tropic HIV-1.</p>
       <p>This indication is based on analyses of plasma HIV-1 RNA levels in 2 controlled studies of SELZENTRY in treatment-experienced patients and 1 study in treatment-naïve patients. Both studies in treatment-experienced patients were conducted in clinically advanced, 3-class antiretroviral-experienced (NRTI, NNRTI, PI, or enfuvirtide) adults with evidence of HIV-1 replication despite ongoing antiretroviral therapy.</p>
@@ -15,11 +15,11 @@
     </div>
     <div>
       <h3>IMPORTANT SAFETY INFORMATION</h3>
-      <div v-if="footer">
+      <div v-if='footer'>
         <h3>Important Safety Information.. continue reading</h3>
       </div>
       <p><strong>BOXED WARNING: Hepatotoxicity: <em>See full Prescribing Information for complete Boxed Warning</em></strong>.</p>
-      <p><strong>Hepatotoxicity has been reported, which may be preceded by severe rash or other features of a systemic allergic reaction (eg, fever, eosinophilia, or elevated IgE). Immediately evaluate patients with signs or symptoms of hepatitis or allergic reaction</strong>.</p><br v-if="!footer"/>
+      <p><strong>Hepatotoxicity has been reported, which may be preceded by severe rash or other features of a systemic allergic reaction (eg, fever, eosinophilia, or elevated IgE). Immediately evaluate patients with signs or symptoms of hepatitis or allergic reaction</strong>.</p><br v-if='!footer'/>
       <h4>CONTRAINDICATION</h4>
       <p>SELZENTRY is contraindicated in patients with severe renal impairment (CrCl &lt;30 mL/min) or end-stage renal disease (ESRD) who are taking potent cytochrome P450 (CYP) 3A inhibitors or inducers.</p><br/>
       <h4>ADDITIONAL WARNINGS AND PRECAUTIONS</h4>
@@ -71,3 +71,296 @@ export default {
   }
 }
 </script>
+
+<style lang='scss' scoped>
+  @import '../scss/main';
+
+  .sidebar-wrap {
+    width: 100%;
+    background-color: $colorLght;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    font-size:85%;
+    box-shadow:0 0 1em 0 transparentize($colorDark,.5);
+    @include transition(all .5s ease-in-out);
+    @include media($small-desktop) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 21.78769%;
+      height: 100%;
+      display: inline-block;
+      z-index: 100;
+      overflow: hidden;
+      @include transform(translatex(20px));
+    }
+  }
+
+  #sidebar, .added-isi, .added-indications {
+    height: 100%;
+    font-size: 0.8rem;
+    padding: 5px 20px 20px 20px;
+    z-index: 20000;
+    a {
+      color: $colorQuin;
+    }
+    h2 {
+      @extend %h3;
+      color: $colorQuin;
+      font-weight: 500;
+      font-family: $ag-demi;
+      font-size: 1.3em;
+      line-height: 1.15em
+    }
+    h3 {
+      @extend %p;
+      color: $colorQuin;
+    }
+    li {
+      position: relative;
+      font-size: 13px;
+      line-height: 18px;
+      &:before {
+        content: '• ';
+        font-weight: 500;
+        color: $colorQuin;
+        position: absolute;
+        left: -1em;
+        font-size: 1rem;
+      }
+      ul {
+        li {
+          &:before {
+            content: '–';
+          }
+        }
+      }
+    }
+    p b {
+      color: $colorQuin;
+      font-family: $ag-demi;
+      font-size: 1.1em;
+      font-weight: 700;
+    }
+    *,h2,h3 {
+      margin-top: .25em;
+      margin-bottom: .25em;
+    }
+    .bold {
+      font-weight: 700;
+      li {
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 18px;
+        font-family: $ag-demi;
+      }
+    }
+    .purple {
+      color: $colorQuin;
+    }
+    @include media($small-desktop) {
+      padding: 20px 10px 20px 10px;
+      overflow: auto;
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+  }
+  .added-isi {
+    /* padding: 15px 0; */
+    padding: 15px;
+    li {
+      list-style: none;
+      position: relative;
+      font-weight: 100;
+      line-height: 1.5em;
+      margin: 0;
+      left: -1em;
+      &:before {
+        content: '• ';
+        font-weight: 600;
+        color: $colorQuin;
+        position: absolute;
+        left: -0.75em;
+        font-size: 1rem;
+      }
+    }
+    .indications-usage {
+      display: none;
+    }
+    .inline-block {
+      line-height: 0;
+    }
+    .prescribing-information {
+      display: none;
+    }
+    p {
+      padding: 0;
+      line-height: 1.5em;
+    }
+    @include media($small-desktop) {
+      padding: 20px;
+      display: none;
+    }
+    @include media($small-desktop-down) {
+      .isi-control {
+        display: none !important;
+      }
+      h2 {
+        font-size: em(22);
+      }
+      h3 {
+        font-size: em(18);
+      }
+      ul {
+        list-style-type: disc;
+      }
+    }
+  }
+
+
+
+  .isi-control {
+    @include media($small-desktop-down) {
+      display: block;
+    }
+  }
+
+  .added-indications {
+    li {
+      list-style: none;
+      position: relative;
+      font-weight: 100;
+      line-height: 1.5em;
+      margin: 0;
+      left: -0.9em;
+      &:before {
+        content: '• ';
+        font-weight: 600;
+        color: $colorQuin;
+        position: absolute;
+        left: -0.75em;
+        font-size: 1.3em;
+      }
+    }
+    p b {
+      color: $colorDark;
+    }
+    padding-bottom: 0;
+    @include media($small-desktop) {
+      display: none;
+    }
+  }
+
+  #sidebar {
+    background: $white;
+    bottom: 0;
+    font-family: $ag-book;
+    font-size: 78.5%;
+    height: 75px;
+    line-height: 1.5em;;
+    padding: 10px;
+    position: fixed;
+    transform: translate3d(0,0,0);
+    width: 100%;
+    z-index: 1000;
+    -webkit-transform: translate3d(0, 0, 0);
+    a {
+      color: $colorQuin;
+    }
+    h2 {
+      font-size: 1em;
+      font-family: $ag-demi;
+      line-height: 1em;
+      margin-top: 0;
+      margin-bottom: 1em;
+      margin-bottom: 1.5rem;
+    }
+    h3 {
+      @extend %p;
+      color: $colorQuin;
+      font-family: $ag-demi;
+      line-height: 14px !important;
+      font-size: 1.1em;
+    }
+    li {
+      position: relative;
+      font-weight: 200;
+      font-family: $ag-book;
+      left: -0.667em !important;
+      &:before {
+        content: '• ';
+        font-weight: 100;
+        color: $colorQuin;
+        position: absolute;
+        left: -1em;
+        font-size: 1rem;
+      }
+    }
+    p,li,h2,h3,h4 {
+      line-height: 1rem;
+    }
+    strong {
+      font-family: $ag-demi;
+      font-weight: 700;
+    }
+    *,h2,h3 {
+      margin-top: .25em;
+      margin-bottom: .25em;
+    }
+    &.active {
+      overflow-y: scroll !important;
+      .isi-control {
+        display: block;
+        @include transform(rotate(180deg));
+      }
+    }
+    .asterisk {
+      margin-top: 0;
+      margin-left: 0;
+    }
+    .bold li {
+      font-family: $ag-demi;
+      font-weight: 700;
+    }
+    .indications-usage {
+      display: none;
+    }
+    .inline-block {
+      line-height: 0;
+    }
+    .isi-control {
+      display: none;
+      cursor: pointer;
+      position: fixed;
+      font-size: em(28);
+      right: 20px;
+      margin-top: 0;
+    }
+    .pink {
+      color: $colorSena;
+      font-weight: 900;
+    }
+    @include media($small-desktop) {
+      background-color: $colorLght;
+      bottom: 0;
+      box-shadow: 0 0 1em 0 transparentize($colorDark,.5);
+      display: block;
+      font-size: 85%;
+      height: auto;
+      /*height: 100%;*/
+      overflow-y: scroll;
+      padding: 20px;
+      position: fixed;
+      right: 0;
+      top: 0;
+      width: 100%;
+      z-index: 999999;
+      .indications-usage {
+        display: block;
+      }
+      @include span-columns(4.1);
+      @include omega;
+    }
+  }
+</style>

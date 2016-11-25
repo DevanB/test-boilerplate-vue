@@ -1,0 +1,327 @@
+// Type Styles
+
+h2 {
+  font-family: 'AvantGarde-Book', sans-serif;
+  font-weight: normal;
+  @include font-size(30);
+  margin: 0 0 1em;
+}
+
+h3 {
+  font-family: 'AvantGarde-Demi', sans-serif;
+  font-weight: normal;
+  @include font-size(20);
+  margin: 0 0 1em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  text-decoration: none;
+  color: $colorQuin;
+}
+
+ul {
+  margin-bottom: 1.5em;
+}
+
+
+/*
+  UNITLESS SETUP OF FONTS ON MODULAR SCALE
+*/
+
+//Modular Scale Settings
+$modular-scale-ratio: $perfect-fifth; //Choose from existing list in bourbon ex $perfect-fourth
+$modular-line-height: 1.5;
+$modular-scale-base:  1em;
+
+//Font Sizes by Modular Scale Factor
+$h1-scale-factor: 3;
+$h2-scale-factor: 2;
+$h3-scale-factor: 1;
+$h4-scale-factor: 1;
+$h5-scale-factor: 0;
+$h6-scale-factor: 0;
+$p-scale-factor:  0;
+$cap-scale-factor: -1;
+
+//Font Margins
+$h1-margin-top-lines:     1;
+$h1-margin-bottom-lines:  1;
+$h2-margin-top-lines:     1;
+$h2-margin-bottom-lines:  1;
+$h3-margin-top-lines:     1;
+$h3-margin-bottom-lines:  1;
+$h4-margin-top-lines:     1;
+$h4-margin-bottom-lines:  1;
+$h5-margin-top-lines:     1;
+$h5-margin-bottom-lines:  0;
+$h6-margin-top-lines:     1;
+$h6-margin-bottom-lines:  1;
+$p-margin-top-lines:    1;
+$p-margin-bottom-lines:   1;
+
+
+/*---------- DON'T EDIT ANYTHING BELOW ----------*/
+
+
+//Derived Values
+$mlh: $modular-line-height / ($modular-line-height * 0 + 1); //Sass math fix
+$los: 1/(16*16) * pow($modular-scale-base, 2);
+
+$h1-lines: round( modular-scale($h1-scale-factor) );
+$h1-lines: round( $h1-lines / ($h1-lines * 0 + 1) / $modular-line-height );
+$h2-lines: round( modular-scale($h2-scale-factor) );
+$h2-lines: round( $h2-lines / ($h2-lines * 0 + 1) / $modular-line-height );
+$h3-lines: round( modular-scale($h3-scale-factor) );
+$h3-lines: round( $h3-lines / ($h3-lines * 0 + 1) / $modular-line-height );
+$h4-lines: round( modular-scale($h4-scale-factor) );
+$h4-lines: round( $h4-lines / ($h4-lines * 0 + 1) / $modular-line-height );
+$h5-lines: round( modular-scale($h5-scale-factor) );
+$h5-lines: round( $h5-lines / ($h5-lines * 0 + 1) / $modular-line-height );
+$h6-lines: round( modular-scale($h6-scale-factor) );
+$h6-lines: round( $h6-lines / ($h6-lines * 0 + 1) / $modular-line-height );
+$p-lines:  round( modular-scale($p-scale-factor ) );
+$p-lines:  round( $p-lines / ($p-lines * 0 + 1)   / $modular-line-height );
+
+//Setting font vars
+$h1-font-size: modular-scale($h1-scale-factor);
+$h1-line: $mlh + 0rem;
+$h1-line-height: $h1-line * $h1-lines;
+$h1-line-height-legacy: strip-unit($mlh) * strip-unit($h1-lines) * strip-unit(modular-scale(-1*$h1-scale-factor)) + strip-unit($los);
+$h1-margin-top: $h1-margin-top-lines * $h1-line;
+$h1-margin-top-legacy: modular-scale(-1*$h1-scale-factor) * $mlh;
+$h1-margin-bottom: $h1-margin-bottom-lines * $h1-line;
+$h1-margin-bottom-legacy: $h1-margin-bottom-lines * modular-scale(-1*$h1-scale-factor) * $mlh;
+
+$h2-font-size: modular-scale($h2-scale-factor);
+$h2-line: $mlh + 0rem;
+$h2-line-height: $h2-line * $h2-lines;
+$h2-line-height-legacy: strip-unit($mlh) * strip-unit($h2-lines) * strip-unit(modular-scale(-1*$h2-scale-factor)) + strip-unit($los);
+$h2-margin-top: $h2-margin-top-lines * $h2-line;
+$h2-margin-top-legacy: modular-scale(-1*$h2-scale-factor) * $mlh;
+$h2-margin-bottom: $h2-margin-bottom-lines * $h2-line;
+$h2-margin-bottom-legacy: $h2-margin-bottom-lines * modular-scale(-1*$h2-scale-factor) * $mlh;
+
+$h3-font-size: modular-scale($h3-scale-factor);
+$h3-line: $mlh + 0rem;
+$h3-line-height: $h3-line * $h3-lines;
+$h3-line-height-legacy: strip-unit($mlh) * strip-unit($h3-lines) * strip-unit(modular-scale(-1*$h3-scale-factor)) + strip-unit($los);
+$h3-margin-top: $h3-margin-top-lines * $h3-line;
+$h3-margin-top-legacy: modular-scale(-1*$h3-scale-factor) * $mlh;
+$h3-margin-bottom: $h2-margin-bottom-lines * $h3-line;
+$h3-margin-bottom-legacy: $h3-margin-bottom-lines * modular-scale(-1*$h3-scale-factor) * $mlh;
+
+$h4-font-size: modular-scale($h4-scale-factor);
+$h4-line: $mlh + 0rem;
+$h4-line-height: $h4-line * $h4-lines;
+$h4-line-height-legacy: strip-unit($mlh) * strip-unit($h4-lines) * strip-unit(modular-scale(-1*$h4-scale-factor)) + strip-unit($los);
+$h4-margin-top: $h4-margin-top-lines * $h4-line;
+$h4-margin-top-legacy: modular-scale(-1*$h4-scale-factor) * $mlh;
+$h4-margin-bottom: $h2-margin-bottom-lines * $h4-line;
+$h4-margin-bottom-legacy: $h4-margin-bottom-lines * modular-scale(-1*$h4-scale-factor) * $mlh;
+
+$h5-font-size: modular-scale($h5-scale-factor);
+$h5-line: $mlh + 0rem;
+$h5-line-height: $h5-line * $h5-lines;
+$h5-line-height-legacy: strip-unit($mlh) * strip-unit($h5-lines) * strip-unit(modular-scale(-1*$h5-scale-factor)) + strip-unit($los);
+$h5-margin-top: $h5-margin-top-lines * $h5-line;
+$h5-margin-top-legacy: modular-scale(-1*$h5-scale-factor) * $mlh;
+$h5-margin-bottom: $h2-margin-bottom-lines * $h5-line;
+$h5-margin-bottom-legacy: $h5-margin-bottom-lines * modular-scale(-1*$h5-scale-factor) * $mlh;
+
+$h6-font-size: modular-scale($h6-scale-factor);
+$h6-line: $mlh + 0rem;
+$h6-line-height: $h6-line * $h6-lines;
+$h6-line-height-legacy: strip-unit($mlh) * strip-unit($h6-lines) * strip-unit(modular-scale(-1*$h6-scale-factor)) + strip-unit($los);
+$h6-margin-top: $h6-margin-top-lines * $h6-line;
+$h6-margin-top-legacy: modular-scale(-1*$h6-scale-factor) * $mlh;
+$h6-margin-bottom: $h2-margin-bottom-lines * $h6-line;
+$h6-margin-bottom-legacy: $h6-margin-bottom-lines * modular-scale(-1*$h6-scale-factor) * $mlh;
+
+$p-font-size: modular-scale($p-scale-factor);
+$p-line: $mlh + 0rem;
+$p-line-height: $p-line * $p-lines;
+$p-line-height-legacy: strip-unit($mlh) * strip-unit($p-lines) * strip-unit(modular-scale(-1*$p-scale-factor)) + strip-unit($los);
+$p-margin-top: $p-margin-top-lines * $p-line;
+$p-margin-top-legacy: modular-scale(-1*$p-scale-factor) * $mlh;
+$p-margin-bottom: $h2-margin-bottom-lines * $p-line;
+$p-margin-bottom-legacy: $p-margin-bottom-lines * modular-scale(-1*$p-scale-factor) * $mlh;
+
+$cap-font-size: modular-scale($cap-scale-factor);
+$cap-line: $mlh + 0rem;
+$cap-line-height: $cap-line * $p-lines;
+$cap-line-height-legacy: strip-unit($mlh) * strip-unit($p-lines) * strip-unit(modular-scale(-1*$cap-scale-factor)) + strip-unit($los);
+$cap-margin-top: $p-margin-top-lines * $cap-line;
+$cap-margin-top-legacy: modular-scale(-1*$cap-scale-factor) * $mlh;
+$cap-margin-bottom: $p-margin-bottom-lines * $p-line;
+$cap-margin-bottom-legacy: $p-margin-bottom-lines * modular-scale(-1*$cap-scale-factor) * $mlh;
+
+//Font and Font Placeholder Styles
+h1,%h1{
+  font-size:    $h1-font-size;
+  line-height:  $h1-line-height-legacy;
+  line-height:  $h1-line-height;
+  margin-top:   0;
+  margin-bottom:  $h1-margin-bottom-legacy;
+  margin-bottom:  $h1-margin-bottom;
+}
+* + h1, * + %h1{
+  margin-top:   $h1-margin-top-legacy;
+  margin-top:   $h1-margin-top;
+}
+h1:last-child, %h1:last-child{
+  margin-bottom:  0;
+}
+
+h2,%h2{
+  font-size:    $h2-font-size;
+  line-height:  1.25em;
+  margin-top:   0;
+  margin-bottom:  $h2-margin-bottom-legacy;
+  margin-bottom:  $h2-margin-bottom;
+}
+* + h2, * + %h2{
+  margin-top:   $h2-margin-top-legacy;
+  margin-top:   $h2-margin-top;
+}
+h2:last-child, %h2:last-child{
+  margin-bottom:  0;
+}
+
+
+h3,%h3{
+  font-size:    $h3-font-size;
+  line-height:  1.25em;
+  margin-top:   0;
+  margin-bottom:  $h3-margin-bottom-legacy;
+  margin-bottom:  $h3-margin-bottom;
+}
+* + h3, * + %h3{
+  margin-top:   $h3-margin-top-legacy;
+  margin-top:   $h3-margin-top;
+}
+h3:last-child, %h3:last-child{
+  margin-bottom:  0;
+}
+
+
+h4,%h4{
+  font-size:    $h4-font-size;
+  line-height:  $h4-line-height-legacy;
+  line-height:  $h4-line-height;
+  margin-top:     0;
+  margin-bottom:  $h4-margin-bottom-legacy;
+  margin-bottom:  $h4-margin-bottom;
+}
+* + h4, * + %h4{
+  margin-top:   $h4-margin-top-legacy;
+  margin-top:   $h4-margin-top;
+}
+h4:last-child, %h4:last-child{
+  margin-bottom:  0;
+}
+
+h5,%h5{
+  font-size:    $h5-font-size;
+  line-height:  $h5-line-height-legacy;
+  line-height:  $h5-line-height;
+  margin-top:     0;
+  margin-bottom:  $h5-margin-bottom-legacy;
+  margin-bottom:  $h5-margin-bottom;
+}
+* + h5, * + %h5{
+  margin-top:   $h5-margin-top-legacy;
+  margin-top:   $h5-margin-top;
+}
+h5:last-child, %h5:last-child{
+  margin-bottom:  0;
+}
+
+h6,%h6{
+  font-size:    $h6-font-size;
+  line-height:  $h6-line-height-legacy;
+  line-height:  $h6-line-height;
+  margin-top:     0;
+  margin-bottom:  $h6-margin-bottom-legacy;
+  margin-bottom:  $h6-margin-bottom;
+}
+* + h6, * + %h6{
+  margin-top:   $h6-margin-top-legacy;
+  margin-top:   $h6-margin-top;
+}
+h6:last-child, %h6:last-child{
+  margin-bottom:  0;
+}
+
+.caption{
+  font-size:    0.875em;
+  line-height:  $cap-line-height-legacy;
+  line-height:  $cap-line-height;
+  margin-top:   0;
+  margin-bottom:  $cap-margin-bottom-legacy;
+  margin-bottom:  $cap-margin-bottom;
+}
+
+p,blockquote,li,%p{
+  font-size:    $p-font-size;
+  line-height:  $p-line-height-legacy;
+  line-height:  $p-line-height;
+  margin-top:   0;
+  margin-bottom:  $p-margin-bottom-legacy;
+  margin-bottom:  $p-margin-bottom;
+}
+* + blockquote{
+  margin-top:   $p-margin-top-legacy;
+  margin-top:   $p-margin-top;
+}
+p:last-child, %p:last-child, blockquote:last-child{
+  margin-bottom:  0;
+}
+
+blockquote{
+  margin-left:  $p-margin-top-legacy;
+  margin-left:  $p-margin-top;
+}
+
+ul,ol{
+  padding:0;
+  list-style-position:inside;
+  margin-top:   0;
+  margin-bottom:  $p-margin-bottom-legacy;
+  margin-bottom:  $p-margin-bottom;
+  margin-left:  $p-margin-top-legacy;
+  margin-left:  $p-margin-top;
+}
+* + ul, * + ol{
+  margin-top:   $p-margin-top-legacy;
+  margin-top:   $p-margin-top;
+}
+ul:last-child, ol:last-child{
+  margin-bottom:  0;
+}
+ul ul, ol ol, ul ol, ol ul{
+  margin-top:0;
+  margin-bottom:0;
+}
+
+hr {
+  border:none;
+  border-top: 1px solid;
+  margin: -1px 0;
+  padding-top:    $p-margin-top-legacy;
+  padding-top:    $p-margin-top;
+  padding-bottom:   $p-margin-bottom-legacy;
+  padding-bottom:   $p-margin-bottom;
+  clear:both;
+  border-color: $gray;
+}
+li, li + *{
+  margin-top:0;
+  margin-bottom:0;
+}
+.inline-block{
+  display:inline-block;
+}

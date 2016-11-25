@@ -1,16 +1,43 @@
 <template>
-  <div class="bar-util">
+  <div class='bar-util'>
     <p class='disclaimer'>This site is intended for US healthcare professionals only.</p>
     <ul>
-      <li>
-        <a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF">Prescribing Info with Boxed Warning</a><span class='desktop-span-pipe'>|</span>
+      <li><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=1">Prescribing Info with Boxed Warning <i class="fa fa-caret-down" aria-hidden="true"></i></a><span class='desktop-span-pipe'>|</span>
+        <ul class="nested-util">
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=1">Highlights of the Full <br>Prescribing Information</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=3">Indications and Usage</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=3">Dosage and Administration</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=4">Dosage Forms and Strengths</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=4">Contraindications</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=4">Warnings and Precautions</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=8">Adverse Reactions</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=13">Drug Interactions</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=17">Use in Specific Populations</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=19">Overdosage</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=19">Description</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=21">Clinical Pharmacology</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=31">Nonclinical Toxicology</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=32">Clinical Studies</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=34">How Supplied/Storage and Handling</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=34">Patient Counseling Information</a></span></li>
+        </ul>
       </li>
-      <li>
-        <a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=38">Medication Guide</a><span class='desktop-span-pipe'>|</span>
+      <li><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=38">Medication Guide <i class="fa fa-caret-down" aria-hidden="true"></i></a><span class='desktop-span-pipe'>|</span>
+        <ul class="nested-util">
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=38">What is the most important information I should know <br>about TRIUMEQ? </a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=40">What is TRIUMEQ?</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=41">Who should not take TRIUMEQ?</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=41">What should I tell my healthcare provider before taking TRIUMEQ?</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=42">How should I take TRIUMEQ?</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=43">What are the possible side <br>effects of TRIUMEQ?</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=43">How should I store TRIUMEQ?</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=44">General information about <br>the safe and effective use <br>of TRIUMEQ</a></span></li>
+          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=44">What are the ingredients <br>in TRIUMEQ?</a></span></li>
+        </ul>
       </li>
       <li><a href="https://www.viivconnect.com/">Patient Savings Card</a></li>
     </ul>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -20,7 +47,7 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
   @import '../scss/main';
   .disclaimer {
     position: absolute;
@@ -31,24 +58,22 @@
     text-align: center;
     letter-spacing: -.05em;
     @include media($small-desktop) {
-      position: relative;
+      color: $colorTert;
+      display: inline-block;
+      float: left;
+      font-family: $open-sans;
+      /*font-size: 0.7333em;*/
+      font-size: 1em;
       left: 0;
+      margin-bottom: 0;
+      /*margin-left: 0;*/
+      margin-left: 20px;
+      /*padding-top: 1.5em;*/
+      padding-top: 1em;
+      position: relative;
       right: initial;
       text-align: left;
       width: auto;
-      font-size: 1em;
-      margin-left: 0;
-      padding-top: 1em;
-    }
-    @include media($small-desktop) {
-      float: left;
-      display: inline-block;
-      color: $colorTert;
-      font-family: $open-sans;
-      margin-bottom: 0;
-      padding-top: 1.5em;
-      font-size: 0.7333em;
-      margin-left: 20px;
     }
     @include media($px1144) {
       font-size: 0.875em;
@@ -62,11 +87,24 @@
     padding: 30px 20px 0 20px;
     margin-bottom: 1em;
 
+    @include media($small-desktop-down) {
+      .nested-util {
+        display: none;
+      }
+    }
+
     @include media($small-desktop) {
       padding: 0;
       border-bottom: 0.0625em solid $gray;
       margin-bottom: 1.25em;
       display: inline-block;
+
+      a {
+        color: $colorQuin;
+        display: block;
+        padding: 1.5em 0;
+      }
+
       > ul > li {
         position: relative;
         @include transition(all 0.2s ease-in-out);
@@ -77,42 +115,180 @@
           display: none;
         }
       }
+
       .desktop-span-pipe {
+        display: block;
         position: absolute;
         right: -.33em;
         top: 1em;
         @include transition(all .22s ease-in-out);
       }
     }
+
     .desktop-span-pipe {
       display: none;
-      @include media($small-desktop) {
-        display: block;
-      } 
     }
+
     > ul {
-      height: 50px;
-      display: block;
-      margin: 0;
-      padding: 0;
       border-bottom: 1px solid #ccc;
+      display: block;
+      height: 50px;
+      margin: 0;
       margin-top: -.25rem;
+      padding: 0;
+
       @include media($small-desktop) {
-        float: right;
+        border-bottom: 0px solid #ccc;
         display: inline-block;
+        float: right;
+        height: auto;
         margin-bottom: 0;
         margin-top: 0;
         padding: 0;
         position: relative;
-        height: auto;
-        border-bottom: 0px solid #ccc;
+
+        i {
+          color: $colorQuin;
+          @include transition(all .5s ease-in-out);
+        }
+
+        ul {
+          background: $colorQuin;
+          box-shadow: 0 3px 3px 0 transparentize($colorDark,.5);
+          display: block;
+          margin: 0;
+          opacity: 0;
+          padding: 1em 0;
+          position: absolute;
+          right: -1.125rem;
+          visibility: hidden;
+          z-index: 99999;
+          @include transition(opacity .22s ease-in-out);
+          
+          li {
+            display: table;
+            float: left;
+            padding: 0;
+            width: 50%;
+            
+            span {
+              display: table-row;
+            }
+
+            a {
+              color: transparentize($colorLght,.33);
+              display: table-cell;
+              padding: 0.5em 1em;
+              vertical-align: middle;
+              @include transition(width .22s ease-in-out, height .22s ease-in-out);
+
+              &:hover {
+                color: $colorLght;
+                &:before {
+                  opacity: 1;
+                  visibility: visible;
+                }
+              }
+
+              &:before {
+                opacity: 0.01;
+                position: absolute;
+                text-decoration: underline;
+                visibility: hidden;
+                white-space: pre-wrap;
+                width: 50%;
+                @include transition(all .22s ease-in-out);
+              }
+            }
+
+            &:nth-child(odd) {
+              clear: left;
+              padding-left: 1em;
+            }
+
+            &:nth-child(even) {
+              padding-right: 1em;
+            }
+
+            &:nth-child(1) a:before {
+              content: 'Highlights of the Full\A Prescribing Information';
+            }
+
+            &:nth-child(2) a:before {
+              content: 'Indications and Usage';
+            }
+
+            &:nth-child(3) a:before {
+              content: 'Dosage and Administration';
+            }
+            
+            &:nth-child(4) a:before {
+              content: 'Dosage Forms and Strength';
+            }
+            
+            &:nth-child(5) a:before {
+              content: 'Contraindications';
+            }
+            
+            &:nth-child(6) a:before {
+              content: 'Warnings and Precautions';
+            }
+            
+            &:nth-child(7) a:before {
+              content: 'Adverse Reactions';
+            }
+            
+            &:nth-child(8) a:before {
+              content: 'Drug Interactions';
+            }
+            
+            &:nth-child(9) a:before {
+              content: 'Use in Specific Populations';
+            }
+            
+            &:nth-child(10) a:before {
+              content: 'Overdosage';
+            }
+            
+            &:nth-child(11) a:before {
+              content: 'Description';
+            }
+            
+            &:nth-child(12) a:before {
+              content: 'Clinical Pharmacology';
+            }
+            
+            &:nth-child(13) a:before {
+              content: 'Nonclinical Toxicology';
+            }
+            
+            &:nth-child(14) a:before {
+              content: 'HLA-B*5701 Clinical Studies';
+              display: none;
+            }
+            
+            &:nth-child(14) a:hover {
+              text-decoration: underline;
+            }
+            
+            &:nth-child(15) a:before {
+              content: 'How Supplied/Storage and Handling';
+            }
+            
+            &:nth-child(16) a:before {
+              content: 'Patient Counseling Information';
+            }
+          }
+        }
       }
+
       > li {
         float: left;
         position: relative;
         text-align: center;
         top: 50%;
         @include transform(translateY(-50%));
+
         @include media($small-desktop) {
           display: block;
           font-size: 0.938em;
@@ -122,17 +298,19 @@
           top: auto;
           @include transform(none);
         }
+        
         &:first-child {
           width: 33%;
           @include media($small-desktop) {
             width:auto;
           }
         }
+        
         &:nth-child(2) {
-          padding: 0 5px;
-          width: 33%;
           border-left: 1px solid #ccc;
           border-right: 1px solid #ccc;
+          padding: 0 5px;
+          width: 33%;
           @include media($small-desktop) {
             border-left: none;
             border-right: none;
@@ -140,47 +318,79 @@
             width: auto;
           }
         }
+
         &:last-child {
           width: 33%;
           @include media($small-desktop) {
             width:auto;
           }
         }
+
         @include media($small-desktop) {
           font-size: 0.7333em;
         }
+
         @include media($px1024) {
           font-size: 0.775em;
         }
+
         @include media($px1144) {
           font-size: 0.875em;
         }
+
         @include media($widescreen-desktop) {
           font-size: 0.925em;
         }
+
         a {
-          color: $colorDark;
           bottom: 0;
-          height: 100%;
+          color: $colorDark;
           display: block;
-          vertical-align: bottom;
           font-size: em(12);
-          line-height: em(22);
           font-weight: bold;
-          padding: 0;
-          margin: -5px 0 0 0;
+          height: 100%;
           letter-spacing: -.05em;
+          line-height: em(22);
+          margin: -5px 0 0 0;
+          padding: 0;
+          vertical-align: bottom;
+
+          i {
+            display: none;
+            @include media($small-desktop) {
+              display: inline-block;
+            }
+          }
+          
           @include media($small-desktop) {
             color: $colorSena;
             font-size: 1em;
-            line-height: 1.5em;
             font-weight: 100;
+            line-height: 1.5em;
             padding: 1.5em;
             padding-left: 0.625em;
             padding-right: 0.625em;
           }
         }
+
         @include media($small-desktop) {
+          &:hover {
+            ul {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+
+          &.stay-hovered {
+            a {
+              background: $colorQuin;
+              color: transparentize($colorLght,.5);
+            }
+            .desktop-span-pipe {
+              display: none;
+            }
+          }
+
           a {
             padding-left: 0.625em;
             padding-right: 0.625em;
@@ -188,16 +398,44 @@
             &:hover {
               background: $colorQuin;
               color: transparentize($colorLght,.5);
+              i {
+                color: transparentize($colorLght,.5);
+              }
+            }
+          }
+
+          &:nth-child(2) {
+            li {
+              &:nth-child(1) a:before {
+                content: 'What is the most important\A information I should know\A about TRIUMEQ? ';
+              }
+              &:nth-child(2) a:before {
+                content: 'What is TRIUMEQ?';
+              }
+              &:nth-child(3) a:before {
+                content: 'Who should not take TRIUMEQ?';
+              }
+              &:nth-child(4) a:before {
+                content: 'What should I tell my healthcare\A provider before taking TRIUMEQ?';
+              }
+              &:nth-child(5) a:before {
+                content: 'How should I take TRIUMEQ?';
+              }
+              &:nth-child(6) a:before {
+                content:'What are the possible side\A effects of TRIUMEQ?';
+              }
+              &:nth-child(7) a:before {
+                content: 'How should I store TRIUMEQ?';
+              }
+              &:nth-child(8) a:before {
+                content: 'General information about\A the safe and effective use\A of TRIUMEQ';
+              }
+              &:nth-child(9) a:before {
+                content: 'What are the ingredients\A in TRIUMEQ?';
+              }
             }
           }
         }
-      }
-    }
-    @include media($small-desktop) {
-      a {
-        color: $colorQuin;
-        padding: 1.5em 0;
-        display: block;
       }
     }
   }

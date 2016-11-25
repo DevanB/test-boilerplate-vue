@@ -9,7 +9,7 @@ import PatientAssistance from '../pages/PatientAssistance'
 import Resources from '../pages/Resources'
 import RisksSideEffects from '../pages/RisksSideEffects'
 import ViralTropism from '../pages/ViralTropism'
-import NotFound from '../components/NotFound'
+import NotFound from '../pages/NotFound'
 
 Vue.use(VueRouter)
 

@@ -1,0 +1,210 @@
+// JS adds class 'show-nav'
+.show-nav .logo {
+  @include media($small-desktop) {
+    display: inline-block;
+    position: relative;
+    top: auto;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.triumeq.hcp #header .logo,
+.patient-savings #header .logo,
+.resources #header .logo,
+.risks-and-side-effects #header .logo {
+  top: 75%;
+}
+
+.hla-screening #header .logo,
+.dosing-considerations #header .logo {
+  top: 57%;
+}
+
+#header.minimal {
+  background: $white;
+  box-shadow:0 0 3px 0 transparentize($colorDark,.5);
+  height: auto;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+
+  .logo, .triumeq-cta {
+    @include media($small-desktop) {
+      filter: alpha(opacity=0);
+      opacity: 0;
+    }
+  }
+
+  .logo {
+    @include media($small-desktop) {
+      display: none;
+    }
+  }
+
+  .triumeq-cta {
+    display: none;
+  }
+
+  &:after {
+    background: $light-gray;
+    box-shadow: 3px 0 3px 0px transparentize($colorDark,.5);
+  }
+
+  &.show-nav {
+    .logo {
+      display: none;
+      @include media($small-desktop) {
+        display: inline-block;
+      }
+    }
+    .navigation {
+      padding-top: 20px;
+      nav {
+        overflow: scroll;
+        padding-bottom: 160px;
+      }
+      @include media($small-desktop) {
+        padding-top: 0;
+        nav {
+          overflow: inherit;
+          padding-bottom: inherit;
+        }
+      }
+    }
+  }
+
+  @include media($small-desktop) {
+    background: $light-gray;
+    height: 8.25em;
+    width: calc(78.25% - .875rem);
+    @include span-columns(14 of 18, block-collapse);
+  }  
+}
+
+.minimal .menu-icon {
+  float: left;
+}
+
+.minimal .menu-home-button {
+  @include media($small-desktop) {
+    display: block;
+    z-index: 12;
+    position: relative;
+  }
+}
+
+section.page-section.sub-menu {
+  padding: 1em 0;
+  
+  @include media($small-desktop) {
+    padding: 2em 0 1.5em;
+  }
+}
+
+section.sub-menu.fixed {
+  height: 4.25em;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 4em;
+  width: 73em;
+  z-index: 11;
+
+  h1 {
+    display: none;
+  }
+
+  li {
+    display: table-row;
+    a {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+
+  li a {
+    letter-spacing: -.05em;
+    padding-bottom: 0;
+    top: 0;
+
+    &:before {
+      bottom: 0;
+      position: absolute;
+      top: auto;
+    }
+  }
+
+  @include media($small-desktop) {
+    @include span-columns(14 of 18);
+  }
+}
+
+// JS Added/removed
+#header.show-nav, #header.show-nav.minimal {
+  height: auto;
+  left: 0;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  .sub-menu {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .logo {
+    display: inline-block;
+    opacity: 1;
+    img {
+      height: auto;
+      width: 100%;
+    }
+    @include media($small-desktop) {
+      display: none;
+      position: absolute;
+      top: 0;
+    }
+  }
+  .menu-icon {
+    cursor: pointer;
+    span:first-child {
+      @include transform(translateY(11px) rotate(45deg));
+    }
+    span:last-child {
+      @include transform(translateY(-11px) rotate(-45deg));
+    }
+    span:nth-child(2) {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .menu-home-button {
+      display: none;
+    }
+    .navigation {
+      opacity: 1;
+      visibility: visible;
+      @include transform(scale(1));
+    }
+    &:before {
+      opacity: 1;
+    }
+    @include media($small-desktop) {
+      left: 0;
+      position: relative;
+      top: 0;
+    }
+  }
+}
+
+// UtilityLinks
+.nested-util {
+  @include media($small-desktop) {
+    left: 0;
+    width: calc(100% + 1.4em);
+  }
+}
+
+// JS added
+.lock-scroll {
+  overflow-y: hidden;
+}

@@ -2,11 +2,11 @@
 @font-face {
   font-family: 'CenturyGothicPro';
   src:
-    url('/fonts/century-gothic/CenturyGothicPro.eot?#iefix') format('embedded-opentype'),
-    url('/fonts/century-gothic/CenturyGothicPro.otf') format('opentype'),
-    url('/fonts/century-gothic/CenturyGothicPro.woff') format('woff'),
-    url('/fonts/century-gothic/CenturyGothicPro.ttf') format('truetype'),
-    url('/fonts/century-gothic/CenturyGothicPro.svg#CenturyGothicPro') format('svg');
+    url('~assets/fonts/century-gothic/CenturyGothicPro.eot?#iefix') format('embedded-opentype'),
+    url('~assets/fonts/century-gothic/CenturyGothicPro.otf') format('opentype'),
+    url('~assets/fonts/century-gothic/CenturyGothicPro.woff') format('woff'),
+    url('~assets/fonts/century-gothic/CenturyGothicPro.ttf') format('truetype'),
+    url('~assets/fonts/century-gothic/CenturyGothicPro.svg#CenturyGothicPro') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,11 +14,11 @@
 @font-face {
   font-family: 'AvantGarde-Book';
   src:
-    url('/fonts/avant-garde/AvantGarde-Book.eot') format('embedded-opentype'),
-    url('/fonts/avant-garde/AvantGarde-Book.otf') format('opentype'),
-    url('/fonts/avant-garde/AvantGarde-Book.woff') format('woff'),
-    url('/fonts/avant-garde/AvantGarde-Book.ttf') format('truetype'),
-    url('/fonts/avant-garde/AvantGarde-Book.svg') format('svg');
+    url('~assets/fonts/avant-garde/AvantGarde-Book.eot') format('embedded-opentype'),
+    url('~assets/fonts/avant-garde/AvantGarde-Book.otf') format('opentype'),
+    url('~assets/fonts/avant-garde/AvantGarde-Book.woff') format('woff'),
+    url('~assets/fonts/avant-garde/AvantGarde-Book.ttf') format('truetype'),
+    url('~assets/fonts/avant-garde/AvantGarde-Book.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -26,11 +26,11 @@
 @font-face {
   font-family: 'AvantGarde-Demi';
   src:
-    url('/fonts/avant-garde/AvantGarde-Demi.eot') format('embedded-opentype'),
-    url('/fonts/avant-garde/AvantGarde-Demi.otf') format('opentype'),
-    url('/fonts/avant-garde/AvantGarde-Demi.woff') format('woff'),
-    url('/fonts/avant-garde/AvantGarde-Demi.ttf') format('truetype'),
-    url('/fonts/avant-garde/AvantGarde-Demi.svg') format('svg');
+    url('~assets/fonts/avant-garde/AvantGarde-Demi.eot') format('embedded-opentype'),
+    url('~assets/fonts/avant-garde/AvantGarde-Demi.otf') format('opentype'),
+    url('~assets/fonts/avant-garde/AvantGarde-Demi.woff') format('woff'),
+    url('~assets/fonts/avant-garde/AvantGarde-Demi.ttf') format('truetype'),
+    url('~assets/fonts/avant-garde/AvantGarde-Demi.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -38,24 +38,22 @@
 @font-face {
   font-family: 'AvantGarde-Bold';
   src:
-    url('/fonts/avant-garde/AvantGarde-Bold.eot') format('embedded-opentype'),
-    url('/fonts/avant-garde/AvantGarde-Bold.otf') format('opentype'),
-    url('/fonts/avant-garde/AvantGarde-Bold.woff') format('woff'),
-    url('/fonts/avant-garde/AvantGarde-Bold.ttf') format('truetype'),
-    url('/fonts/avant-garde/AvantGarde-Bold.svg') format('svg');
+    url('~assets/fonts/avant-garde/AvantGarde-Bold.eot') format('embedded-opentype'),
+    url('~assets/fonts/avant-garde/AvantGarde-Bold.otf') format('opentype'),
+    url('~assets/fonts/avant-garde/AvantGarde-Bold.woff') format('woff'),
+    url('~assets/fonts/avant-garde/AvantGarde-Bold.ttf') format('truetype'),
+    url('~assets/fonts/avant-garde/AvantGarde-Bold.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
     font-family: 'Haettenschweiler-regular';
-    src: url('/fonts/haettenschweiler/haettenschweiler-webfont.eot');
-    src: url('/fonts/haettenschweiler/haettenschweiler-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/haettenschweiler/haettenschweiler-webfont.woff') format('woff'),
-         url('/fonts/haettenschweiler/haettenschweiler-webfont.ttf') format('truetype'),
-         url('/fonts/haettenschweiler/haettenschweiler-webfont.svg#haettenschweilerregular') format('svg');
+    src: url('~assets/fonts/haettenschweiler/haettenschweiler-webfont.eot');
+    src: url('~assets/fonts/haettenschweiler/haettenschweiler-webfont.eot?#iefix') format('embedded-opentype'),
+         url('~assets/fonts/haettenschweiler/haettenschweiler-webfont.woff') format('woff'),
+         url('~assets/fonts/haettenschweiler/haettenschweiler-webfont.ttf') format('truetype'),
+         url('~assets/fonts/haettenschweiler/haettenschweiler-webfont.svg#haettenschweilerregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
-
-@import 'node_modules/fonts/font-awesome/scss/font-awesome.scss';

@@ -3,14 +3,14 @@
     <div class='header-pad'>
       <UtilityLinks/>
       <div class='menu-home-button'>
-        <router-link to='/'><img class='home-icon' src='../assets/home-button.svg' width='100%' alt='Home'></router-link>
+        <router-link to='/'><img class='home-icon' src='~assets/images/home-button.svg' width='100%' alt='Home'></router-link>
       </div>
       <Navigation :columns='3'/>    
       <div class='logo content-mobile' id='mobileLogo'>
-        <router-link to='/' title='Selzentry HCP'><img src='../assets/logo-triumeq-hcp.png' id='mobileImg' alt='Selzentry HCP'/></router-link>
+        <router-link to='/' title='Selzentry HCP'><img src='~assets/images/logo-triumeq-hcp.png' id='mobileImg' alt='Selzentry HCP'/></router-link>
       </div>
       <!--[if lte IE 9]> <div class='ie9down'> <![endif]-->
-      <a href='http://selzentryhcp.com' class='triumeq-cta'>Learn about<br><strong>putting dolutegravir at<br />the core of therapy</strong></a>
+      <a href='http://selzentryhcp.com' target='_blank' class='triumeq-cta'>Learn about<br><strong>putting dolutegravir at<br />the core of therapy</strong></a>
       <!--[if lte IE 9]> </div> <![endif]-->
     </div>
   </header>

@@ -2,40 +2,40 @@
   <div class='bar-util'>
     <p class='disclaimer'>This site is intended for US healthcare professionals only.</p>
     <ul>
-      <li><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=1">Prescribing Info with Boxed Warning <i class="fa fa-caret-down" aria-hidden="true"></i></a><span class='desktop-span-pipe'>|</span>
-        <ul class="nested-util">
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=1">Highlights of the Full <br>Prescribing Information</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=3">Indications and Usage</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=3">Dosage and Administration</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=4">Dosage Forms and Strengths</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=4">Contraindications</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=4">Warnings and Precautions</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=8">Adverse Reactions</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=13">Drug Interactions</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=17">Use in Specific Populations</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=19">Overdosage</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=19">Description</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=21">Clinical Pharmacology</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=31">Nonclinical Toxicology</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=32">Clinical Studies</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=34">How Supplied/Storage and Handling</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=34">Patient Counseling Information</a></span></li>
+      <li><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=1' target='_blank'>Prescribing Info with Boxed Warning <i class='fa fa-caret-down' aria-hidden='true'></i></a><span class='desktop-span-pipe'>|</span>
+        <ul class='nested-util'>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=1' target='_blank'>Highlights of the Full <br>Prescribing Information</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=3' target='_blank'>Indications and Usage</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=3' target='_blank'>Dosage and Administration</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=4' target='_blank'>Dosage Forms and Strengths</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=4' target='_blank'>Contraindications</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=4' target='_blank'>Warnings and Precautions</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=8' target='_blank'>Adverse Reactions</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=13' target='_blank'>Drug Interactions</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=17' target='_blank'>Use in Specific Populations</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=19' target='_blank'>Overdosage</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=19' target='_blank'>Description</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=21' target='_blank'>Clinical Pharmacology</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=31' target='_blank'>Nonclinical Toxicology</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=32' target='_blank'>Clinical Studies</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=34' target='_blank'>How Supplied/Storage and Handling</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=34' target='_blank'>Patient Counseling Information</a></span></li>
         </ul>
       </li>
-      <li><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=38">Medication Guide <i class="fa fa-caret-down" aria-hidden="true"></i></a><span class='desktop-span-pipe'>|</span>
-        <ul class="nested-util">
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=38">What is the most important information I should know <br>about TRIUMEQ? </a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=40">What is TRIUMEQ?</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=41">Who should not take TRIUMEQ?</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=41">What should I tell my healthcare provider before taking TRIUMEQ?</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=42">How should I take TRIUMEQ?</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=43">What are the possible side <br>effects of TRIUMEQ?</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=43">How should I store TRIUMEQ?</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=44">General information about <br>the safe and effective use <br>of TRIUMEQ</a></span></li>
-          <li><span><a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=44">What are the ingredients <br>in TRIUMEQ?</a></span></li>
+      <li><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=38' target='_blank'>Medication Guide <i class='fa fa-caret-down' aria-hidden='true'></i></a><span class='desktop-span-pipe'>|</span>
+        <ul class='nested-util'>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=38' target='_blank'>What is the most important information I should know <br>about TRIUMEQ? </a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=40' target='_blank'>What is TRIUMEQ?</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=41' target='_blank'>Who should not take TRIUMEQ?</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=41' target='_blank'>What should I tell my healthcare provider before taking TRIUMEQ?</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=42' target='_blank'>How should I take TRIUMEQ?</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=43' target='_blank'>What are the possible side <br>effects of TRIUMEQ?</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=43' target='_blank'>How should I store TRIUMEQ?</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=44' target='_blank'>General information about <br>the safe and effective use <br>of TRIUMEQ</a></span></li>
+          <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=44' target='_blank'>What are the ingredients <br>in TRIUMEQ?</a></span></li>
         </ul>
       </li>
-      <li><a href="https://www.viivconnect.com/">Patient Savings Card</a></li>
+      <li><a href='https://www.viivconnect.com/' target='_blank'>Patient Savings Card</a></li>
     </ul>
   </div>
 </template>
@@ -87,8 +87,13 @@
     padding: 30px 20px 0 20px;
     margin-bottom: 1em;
 
-    @include media($small-desktop-down) {
-      .nested-util {
+    .nested-util {
+      @include media($small-desktop) {
+        left: 0;
+        width: calc(100% + 1.4em);
+      }
+
+      @include media($small-desktop-down) {
         display: none;
       }
     }

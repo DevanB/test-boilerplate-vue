@@ -1389,7 +1389,7 @@ sup {
 
 h3 {
   sup {
-    font-family: 'Open Sans', sans-serif;
+    font-family: $open-sans;
     top: -.5em;
     left: -0.1em;
     white-space: nowrap;
@@ -1734,10 +1734,6 @@ sub {
     padding-top: 0;
   }
 }
-
-/*----------------------------------------------------------------------------*\
-----[ MOBILE LANDSCAPE MESSAGE ]                                 
-\*----------------------------------------------------------------------------*/
 
 .is-hidden { 
   display: none; 

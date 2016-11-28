@@ -1,14 +1,14 @@
 // Type Styles
 
 h2 {
-  font-family: 'AvantGarde-Book', sans-serif;
+  font-family: $ag-book;
   font-weight: normal;
   @include font-size(30);
   margin: 0 0 1em;
 }
 
 h3 {
-  font-family: 'AvantGarde-Demi', sans-serif;
+  font-family: $ag-demi;
   font-weight: normal;
   @include font-size(20);
   margin: 0 0 1em;

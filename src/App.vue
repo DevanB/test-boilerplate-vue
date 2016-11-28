@@ -4,8 +4,8 @@
       <div class='scrollable-content'>
         <div class='body-int-bg-wrap'><div class='body-int-bg'></div></div>
         <TopHeader/>
-        <div class="main-column">
-          <div id="content">
+        <div class='main-column'>
+          <div id='content'>
             <section class='sub-menu-offset'></section>
             <!--Modal For Off-site links-->
             <router-view/>

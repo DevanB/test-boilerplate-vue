@@ -8,7 +8,9 @@
 @import 'node_modules/bourbon-neat/app/assets/stylesheets/neat';
 
 // Partials
-@import './partials/_reset';
-@import './partials/_mixins';
-@import './partials/_settings';
-@import './partials/_type';
+@import './partials/_reset.scss';
+@import './partials/_mixins.scss';
+@import './partials/_fonts.scss';
+@import '~assets/fonts/font-awesome/scss/font-awesome.scss';
+@import './partials/_settings.scss';
+@import './partials/_type.scss';

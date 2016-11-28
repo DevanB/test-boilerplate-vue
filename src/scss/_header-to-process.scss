@@ -196,14 +196,6 @@ section.sub-menu.fixed {
   }
 }
 
-// UtilityLinks
-.nested-util {
-  @include media($small-desktop) {
-    left: 0;
-    width: calc(100% + 1.4em);
-  }
-}
-
 // JS added
 .lock-scroll {
   overflow-y: hidden;

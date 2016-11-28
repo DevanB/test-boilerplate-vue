@@ -51,7 +51,7 @@
                       links.length - 1 === index ? (
                         <div class='newLogo'>
                           <router-link to='/' title='Selzentry HCP'>
-                            <img src='../assets/logo-triumeq-hcp.png' alt='Selzentry HCP'/>
+                            <img src='../assets/images/logo-triumeq-hcp.png' alt='Selzentry HCP'/>
                           </router-link>
                         </div>
                         ) : ''

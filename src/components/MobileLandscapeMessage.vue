@@ -20,7 +20,7 @@
       @include linear-gradient(to top, #743a97, #d0118c);
     }
     .mobile-landscape-message-image {
-      background-image: url('../assets/mobile-landscape-message.png');
+      background-image: url('~assets/images/mobile-landscape-message.png');
       background-size: contain;
       background-position: center center;
       background-repeat: no-repeat;

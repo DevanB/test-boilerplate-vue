@@ -6,10 +6,10 @@
         Visit <a class='modal' href='http://www.fda.gov/medwatch'>www.fda.gov/medwatch</a>, or call 1-800-FDA-1088.
       </p>
       <ul class='viiv-image-links'>
-        <li><a href='https://viivhealthcare.com'><img src='../assets/viiv-logo.svg' alt=''></a></li>
-        <li><a href='http://viivconnect.com'><img src='../assets/viiv-for-you.svg' alt=''></a></li>
-        <li><a href='https://www.contactus.gsk.com/callback/index.html'><img src='../assets/viiv-contact-us.png' alt=''></a></li>
-        <li><a href='https://www.contactus.gsk.com/callback/index.html'><img src='../assets/viiv-request-sales-professional.png' alt=''></a></li>
+        <li><a href='https://viivhealthcare.com' target='_blank'><img src='~assets/images/viiv-logo.svg' alt=''></a></li>
+        <li><a href='http://viivconnect.com' target='_blank'><img src='~assets/images/viiv-for-you.svg' alt=''></a></li>
+        <li><a href='https://www.contactus.gsk.com/callback/index.html' target='_blank'><img src='~assets/images/viiv-contact-us.png' alt=''></a></li>
+        <li><a href='https://www.contactus.gsk.com/callback/index.html' target='_blank'><img src='~assets/images/viiv-request-sales-professional.png' alt=''></a></li>
       </ul>
       <p>
         TRIUMEQ and TIVICAY are registered trademarks of the ViiV Healthcare group of companies.
@@ -21,10 +21,10 @@
     </div>
     <div class='footer-menu'>
       <ul>
-        <li><a href='https://www.viivhealthcare.com/terms-of-use.aspx'>Legal Notices</a><span>|</span></li>
-        <li><a href='https://www.viivhealthcare.com/privacy-policy.aspx'>Privacy Statement</a><span>|</span></li>
-        <li><a href='http://www.viivhealthcareforyou.com'>Medicine Savings</a><span>|</span></li>
-        <li><a href='https://www.contactus.gsk.com/callback/index.html'>Contact Us</a></li>
+        <li><a href='https://www.viivhealthcare.com/terms-of-use.aspx' target='_blank'>Legal Notices</a><span>|</span></li>
+        <li><a href='https://www.viivhealthcare.com/privacy-policy.aspx' target='_blank'>Privacy Statement</a><span>|</span></li>
+        <li><a href='http://www.viivhealthcareforyou.com' target='_blank'>Medicine Savings</a><span>|</span></li>
+        <li><a href='https://www.contactus.gsk.com/callback/index.html' target='_blank'>Contact Us</a></li>
       </ul>
     </div>
   </footer>

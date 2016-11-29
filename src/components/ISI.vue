@@ -1,6 +1,6 @@
 <template>
-  <div id='sidebar' v-bind:class='{ active: isActive }'>
-    <i v-show='footer' @click='isActive = !isActive' class='fa fa-angle-up isi-control'></i>
+  <div id='sidebar' @click='toggleISI' v-bind:class='isiClasses' v-bind:style='isiStyles'>
+    <i v-show='mobile' class='fa fa-angle-up isi-control'></i>
     <div class='indications-usage'>
       <h2>Indications and Usage:</h2>
       <p>TRIUMEQ is indicated for the treatment of human immunodeficiency virus type 1 (HIV-1) infection.</p>
@@ -16,7 +16,12 @@
     </div>
     <h2>Important Safety Information:</h2>
     <div class='bold'>
-    <p><strong>BOXED WARNING: HYPERSENSITIVITY REACTIONS, LACTIC ACIDOSIS AND SEVERE HEPATOMEGALY, and EXACERBATIONS OF HEPATITIS B VIRUS (HBV): <i v-if='footer' class='mobile-break'>See full Prescribing Information for complete boxed warning </i></strong></p>
+    <p>
+      <strong>
+        BOXED WARNING: HYPERSENSITIVITY REACTIONS, LACTIC ACIDOSIS AND SEVERE HEPATOMEGALY, and EXACERBATIONS OF HEPATITIS B VIRUS (HBV): 
+        <i v-if='mobile'><br/>See full Prescribing Information for complete boxed warning</i>
+      </strong>
+    </p>
     <h3>Hypersensitivity Reactions:</h3>
     <ul>
       <li>Serious and sometimes fatal hypersensitivity reactions have occurred with abacavir-containing products</li>
@@ -46,7 +51,7 @@
     <h3>WARNINGS AND PRECAUTIONS</h3>
     <h3>Hypersensitivity Reactions to Dolutegravir:</h3>
     <ul>
-      <li>Hypersensitivity reactions have been reported and were characterized by rash, constitutional findings, and sometimes organ dysfunction, including liver injury. The events were reported in &lt;1% of subjects receiving <span class='inline-super'>TIVICAY<sup>&reg;</sup></span> in <span class='inline-block'>Phase 3</span> clinical trials </li>
+      <li>Hypersensitivity reactions have been reported and were characterized by rash, constitutional findings, and sometimes organ dysfunction, including liver injury. The events were reported in &lt;1% of subjects receiving <span class='inline-block'>TIVICAY<sup>&reg;</sup></span> in <span class='inline-block'>Phase 3</span> clinical trials </li>
       <li>Clinically, it is not possible to determine whether a hypersensitivity reaction with TRIUMEQ would be caused by abacavir or dolutegravir. Discontinue TRIUMEQ and other suspect agents immediately if signs or symptoms of hypersensitivity reaction develop </li>
     </ul>
     <h3>Effects on Serum Liver Biochemistries in Patients with Hepatitis B or C Co-infection:</h3>
@@ -85,16 +90,28 @@
 </template>
 
 <script>
+import { mapGetters, mapState } from 'vuex'
+
 export default {
-  props: {
-    footer: {
-      type: Boolean,
-      required: true
+  computed: {
+    ...mapState([ 'isiActive', 'isiSeen' ]),
+    ...mapGetters([ 'mobile' ]),
+    isiClasses () {
+      const { mobile, isiActive, isiSeen } = this
+      return {
+        active: mobile && isiActive,
+        isiSeenHeight: mobile && !isiActive && isiSeen,
+        isiNotSeenHeight: mobile && !isiActive && isiSeen === false
+      }
     }
   },
-  data () {
-    return {
-      isActive: false
+
+  methods: {
+    toggleISI () {
+      if (this.mobile) {
+        this.$store.commit('toggleIsiActive')
+        if (!this.isiSeen) this.$store.commit('toggleIsiSeen')
+      }
     }
   }
 }
@@ -102,6 +119,16 @@ export default {
 
 <style lang='scss' scoped>
   @import '../scss/main.scss';
+
+  .isiNotSeenHeight {
+    height: 66px !important;
+    min-height: 66px !important;
+  }
+
+  .isiSeenHeight {
+    height: 31px !important;
+    min-height: 31px !important;
+  }
 
   #sidebar {
     background: $white;
@@ -302,8 +329,8 @@ export default {
     margin-top: 1em;
   }
 
-  /*.added-isi {
-    /* padding: 15px 0;
+  .added-isi {
+    padding: 15px 0;
     padding: 15px;
     li {
       list-style: none;
@@ -352,7 +379,7 @@ export default {
         list-style-type: disc;
       }
     }
-  }*/
+  }
 
   .isi-control {
     cursor: pointer;

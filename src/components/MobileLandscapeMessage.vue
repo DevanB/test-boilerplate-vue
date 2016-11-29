@@ -1,29 +1,25 @@
 <template>
-  <div class='mobile-landscape-message'>
-      <div class='mobile-landscape-message-image'></div>
-    </div>
+  <img v-show='mobileLandscape' src='~assets/images/mobile-landscape-message.png' class='mobile-landscape-message-image' alt='This website is best viewed in portrait mode on mobile devices. Please rotate your device.'/>
 </template>
+
+<script>
+  import { mapGetters } from 'vuex'
+
+  export default {
+    computed: mapGetters([ 'mobileLandscape' ])
+  }
+</script>
 
 <style lang='scss' scoped>
   @import '../scss/main';
 
-  @media only screen and (max-device-width: 768px) and (orientation: landscape) {
-    .mobile-landscape-message, .mobile-landscape-message-image {
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 99999999999;
-    }
-    .mobile-landscape-message {
-      @include linear-gradient(to top, #743a97, #d0118c);
-    }
-    .mobile-landscape-message-image {
-      background-image: url('~assets/images/mobile-landscape-message.png');
-      background-size: contain;
-      background-position: center center;
-      background-repeat: no-repeat;
-    }
+  .mobile-landscape-message-image {
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 99999999999;
+    @include linear-gradient(to top, #743a97, #d0118c);
   }
 </style>

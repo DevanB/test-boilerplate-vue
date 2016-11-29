@@ -29,7 +29,7 @@
   top: 0;
   z-index: 9999;
 
-  .logo, .triumeq-cta {
+  .logo {
     @include media($small-desktop) {
       filter: alpha(opacity=0);
       opacity: 0;
@@ -40,10 +40,6 @@
     @include media($small-desktop) {
       display: none;
     }
-  }
-
-  .triumeq-cta {
-    display: none;
   }
 
   &:after {

@@ -15,7 +15,8 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "vue": "^2.0.1",
-    "vue-router": "^2.0.2"
+    "vue-router": "^2.0.2",
+    "vuex": "^2.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

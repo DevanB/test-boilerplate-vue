@@ -1,7 +1,3 @@
-.inline-supers {
-  display: inline-block;
-}
-
 .hcp {
   .ordered-list{
     padding: 0 1.5rem;
@@ -105,10 +101,6 @@
   }
 }
 
-.purple {
-  color: $colorTert;
-}
-
 .caption .special-sup {
   left: auto;
   padding: 0;
@@ -158,14 +150,6 @@ h3 {
   @include media($small-desktop) {
     display: inline-block;
     padding-bottom: 1em;
-  }
-}
-
-.svg-mobile, .content-mobile {
-  display: block;
-  padding-bottom: 1em;
-  @include media($small-desktop) {
-    display: none;
   }
 }
 
@@ -1244,13 +1228,6 @@ h3 {
   }
 }
 
-.mobile-break {
-  display: block;
-  @include media($small-desktop) {
-    display: none;
-  }
-}
-
 .desktop-break {
   display: none;
   @include media($small-desktop) {
@@ -1377,16 +1354,6 @@ h3 {
   }
 }
 
-sup {
-  position: relative;
-  top: -.5em;
-  left: -.25em;
-  font-weight: 100;
-  font-size: .75em;
-  padding: 0 .1em 0 .2em;
-  margin-right: -.33em;
-}
-
 h3 {
   sup {
     font-family: $open-sans;
@@ -1406,15 +1373,6 @@ sub {
   font-weight: 100;
   font-size: .75em;
   padding: 0 .1em 0 .2em;
-}
-
-.asterisk {
-  font-family: $ag-demi;
-  top: -.25em;
-  margin-right: -.4em;
-  &.book {
-    font-family: $ag-book;
-  }
 }
 
 .callout .asterisk {
@@ -1709,19 +1667,11 @@ sub {
   }
 }
 
-.inline-super {
-  display: inline-block;
-}
-
 .mobileMargin {
   margin-top: 1.5em;
   @include media($small-desktop) {
     margin-top: 0em;
   }
-}
-
-.lineHeight {
-  line-height: 0;
 }
 
 .hla h3 {
@@ -1732,77 +1682,5 @@ sub {
   padding-top: 3.5rem;
   @include media($small-desktop) {
     padding-top: 0;
-  }
-}
-
-.is-hidden { 
-  display: none; 
-  height: 0;
-  width: 0;
-  top: 0;
-  left: 0;
-}
-
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0,0,0,0.6);
-  z-index: 110000;
-  .Xbutton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    height: 20px;
-    width: 20px;
-    span:first-child {
-      @include transform(translateY(11px) rotate(45deg));
-      padding-left: 5px;
-    }
-    span:last-child {
-      @include transform(translateY(-11px) rotate(-45deg));
-      margin-top: 17px;
-    }
-    .xes {
-      display: block;
-      margin: 0 auto 0.4375em;
-      width: 20px;
-      height: 0.25em;
-      background: $colorQuin;;
-      opacity: 1;
-      @include transform(translateY(-100%) translateX(-50%));
-
-    }
-  }
-  .modal-content {
-    text-align: center;
-    padding: 20px 30px;
-    width: 90vw;
-    position: relative;
-    top: 0;
-    min-height: 300px;
-    margin: 5% auto 0;
-    background: #fff;
-    @include media($small-desktop){
-      width: 600px; 
-      top: 25vh;  
-    }
-  }
-  button {
-    color: white;
-    font-size: 1em;
-    text-transform: uppercase;
-    border-radius: 6px;
-    border: white;
-    padding: 5px 15px;
-    margin: 5px;
-  }
-  .allowModal {
-    background-color: $colorQuin;   
-  }
-  .cancel {
-    background-color: $colorSena;
   }
 }

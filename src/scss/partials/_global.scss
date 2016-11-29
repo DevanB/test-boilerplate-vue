@@ -1,0 +1,35 @@
+.asterisk {
+  font-family: $ag-demi;
+  margin-right: -.4em;
+  top: -.25em;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.lineHeight {
+  line-height: 0;
+}
+
+.purple {
+  color: $colorTert;
+}
+
+sup {
+  font-size: .75em;
+  font-weight: 100;
+  left: -.25em;
+  margin-right: -.33em;
+  padding: 0 .1em 0 .2em;
+  position: relative;
+  top: -.5em;
+}
+
+.svg-mobile, .content-mobile {
+  display: block;
+  padding-bottom: 1em;
+  @include media($small-desktop) {
+    display: none;
+  }
+}

@@ -7,14 +7,13 @@
         <div class='main-column'>
           <div id='content'>
             <section class='sub-menu-offset'></section>
-            <!--Modal For Off-site links-->
             <router-view/>
           </div>
         </div>
         <BottomFooter/>
       </div>
     </div>
-    <ISI :footer='false'/>
+    <ISI/>
     <MobileLandscapeMessage/>
   </div>
 </template>
@@ -28,20 +27,32 @@ import ISI from './components/ISI'
 export default {
   name: 'App',
   components: { BottomFooter, ISI, MobileLandscapeMessage, TopHeader },
-  data () {
-    return {
-      windowWidth: ''
-    }
-  },
-  ready () {
-    window.addEventListener('resize', this.handleResize)
+  mounted () {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.setWindowWidth)
+      window.addEventListener('resize', this.setWindowHeight)
+
+      this.setWindowWidth()
+      this.setWindowHeight()
+    })
   },
   beforeDestroy () {
-    window.addEventListener('resize', this.handleResize)
+    window.removeEventListener('resize', this.setWindowWidth)
+    window.removeEventListener('resize', this.setWindowHeight)
+  },
+  computed: {
+    mobile () {
+      return this.$store.getters.mobile
+    }
   },
   methods: {
-    handleResize (event) {
-      this.windowWidth = window.innerWidth
+    setWindowWidth () {
+      let windowWidth = document.documentElement.clientWidth
+      this.$store.commit('setWindowWidth', windowWidth)
+    },
+    setWindowHeight () {
+      let windowHeight = document.documentElement.clientHeight
+      this.$store.commit('setWindowHeight', windowHeight)
     }
   }
 }
@@ -125,7 +136,7 @@ export default {
     width: 100%;
     overflow: hidden;
     @include media($small-desktop) {
-      overflow:visible;
+      overflow: visible;
     }
   }
 

@@ -13,8 +13,9 @@ const store = new Vuex.Store({
   state: {
     isiActive: false,
     isiSeen: false,
-    windowWidth: 0,
-    windowHeight: 0
+    navigationOpen: false,
+    windowHeight: 0,
+    windowWidth: 0
   },
   actions: {
   },

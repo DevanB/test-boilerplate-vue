@@ -6,7 +6,8 @@
   import { mapGetters } from 'vuex'
 
   export default {
-    computed: mapGetters([ 'mobileLandscape' ])
+    computed: mapGetters([ 'mobileLandscape' ]),
+    name: 'MobileLanscapeMessage'
   }
 </script>
 

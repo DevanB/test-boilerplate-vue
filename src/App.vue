@@ -25,21 +25,11 @@ import MobileLandscapeMessage from './components/MobileLandscapeMessage'
 import ISI from './components/ISI'
 
 export default {
-  name: 'App',
-  components: { BottomFooter, ISI, MobileLandscapeMessage, TopHeader },
-  mounted () {
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.setWindowWidth)
-      window.addEventListener('resize', this.setWindowHeight)
-
-      this.setWindowWidth()
-      this.setWindowHeight()
-    })
-  },
   beforeDestroy () {
     window.removeEventListener('resize', this.setWindowWidth)
     window.removeEventListener('resize', this.setWindowHeight)
   },
+  components: { BottomFooter, ISI, MobileLandscapeMessage, TopHeader },
   computed: {
     mobile () {
       return this.$store.getters.mobile
@@ -54,7 +44,17 @@ export default {
       let windowHeight = document.documentElement.clientHeight
       this.$store.commit('setWindowHeight', windowHeight)
     }
-  }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.setWindowWidth)
+      window.addEventListener('resize', this.setWindowHeight)
+
+      this.setWindowWidth()
+      this.setWindowHeight()
+    })
+  },
+  name: 'App'
 }
 </script>
 

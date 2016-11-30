@@ -5,7 +5,7 @@
       <div class='menu-home-button'>
         <router-link to='/'><img class='home-icon' src='~assets/images/home-button.svg' width='100%' alt='Home'></router-link>
       </div>
-      <Navigation :columns='3'/>
+      <Navigation v-bind:columns='3'/>
       <div class='logo content-mobile'>
         <router-link to='/' title='Selzentry HCP'><img src='~assets/images/logo-triumeq-hcp.png' id='mobileImg' alt='Selzentry HCP'/></router-link>
       </div>
@@ -14,12 +14,13 @@
 </template>
 
 <script>
-import Navigation from './Navigation'
-import UtilityLinks from './UtilityLinks'
-export default {
-  name: 'TopHeader',
-  components: { Navigation, UtilityLinks }
-}
+  import Navigation from './Navigation'
+  import UtilityLinks from './UtilityLinks'
+
+  export default {
+    components: { Navigation, UtilityLinks },
+    name: 'TopHeader'
+  }
 </script>
 
 <style lang='scss' scoped>

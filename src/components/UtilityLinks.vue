@@ -42,8 +42,7 @@
 
 <script>
   export default {
-    name: 'UtilityLinks',
-    components: {}
+    name: 'UtilityLinks'
   }
 </script>
 

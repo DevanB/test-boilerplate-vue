@@ -1,5 +1,5 @@
 <template>
-  <footer id='footer'>
+  <footer id='footer' v-bind:class='footerStyles'>
     <div class='inset'>
       <p>
         You are encouraged to report negative side effects of prescription drugs to the FDA.<br>
@@ -31,13 +31,34 @@
 </template>
 
 <script>
+  import { mapGetters, mapState } from 'vuex'
+
   export default {
+    computed: {
+      ...mapGetters([ 'mobile' ]),
+      ...mapState([ 'isiActive', 'isiSeen' ]),
+      footerStyles () {
+        const { mobile, isiActive, isiSeen } = this
+        return {
+          isiSeenFooterHeight: mobile && !isiActive && isiSeen,
+          isiNotSeenFooterHeight: mobile && !isiActive && isiSeen === false
+        }
+      }
+    },
     name: 'BottomFooter'
   }
 </script>
 
 <style lang='scss' scoped>
   @import '../scss/main';
+
+  .isiNotSeenFooterHeight {
+    margin-bottom: 66px !important;
+  }
+
+  .isiSeenFooterHeight {
+    margin-bottom: 31px !important;
+  }
 
   #footer {
     clear: both;

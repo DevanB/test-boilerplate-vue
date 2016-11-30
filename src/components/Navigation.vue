@@ -10,61 +10,6 @@
     }, [])
   )
   export default {
-    name: 'Navigation',
-    props: {
-      columns: {
-        type: Number,
-        required: true
-      }
-    },
-    methods: {
-      toggleNavigation () {
-        this.showNavigation = !this.showNavigation
-      }
-    },
-    render (h) {
-      return (
-        <div>
-          <div on-click={ this.toggleNavigation } class='menu-icon'>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class='navigation' v-show={ this.showNavigation }>
-            <nav>
-              {
-                columnize(this.links, this.columns).map((linkGroup, index, links) => (
-                  <div class='menuColumn'>
-                    {
-                      linkGroup.map((group, index) => (
-                        <div class='group'>
-                          <router-link to={ group.url }><h3>{ group.title }</h3></router-link>
-                          {
-                            group.children.map((childLink, index) => (
-                              <router-link to={ childLink.url }><li>{ childLink.title }</li></router-link>
-                            ))
-                          }
-                        </div>
-                      ))
-                    }
-                    {
-                      links.length - 1 === index ? (
-                        <div class='newLogo'>
-                          <router-link to='/' title='Selzentry HCP'>
-                            <img src='../assets/images/logo-triumeq-hcp.png' alt='Selzentry HCP'/>
-                          </router-link>
-                        </div>
-                        ) : ''
-                      }
-                  </div>
-
-                ))
-              }
-            </nav>
-          </div>
-        </div>
-      )
-    },
     data () {
       return {
         showNavigation: false,
@@ -160,6 +105,61 @@
           }
         ]
       }
+    },
+    methods: {
+      toggleNavigation () {
+        this.showNavigation = !this.showNavigation
+      }
+    },
+    name: 'Navigation',
+    props: {
+      columns: {
+        type: Number,
+        required: true
+      }
+    },
+    render (h) {
+      return (
+        <div>
+          <div on-click={ this.toggleNavigation } class='menu-icon'>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class='navigation' v-show={ this.showNavigation }>
+            <nav>
+              {
+                columnize(this.links, this.columns).map((linkGroup, index, links) => (
+                  <div class='menuColumn'>
+                    {
+                      linkGroup.map((group, index) => (
+                        <div class='group'>
+                          <router-link to={ group.url }><h3>{ group.title }</h3></router-link>
+                          {
+                            group.children.map((childLink, index) => (
+                              <router-link to={ childLink.url }><li>{ childLink.title }</li></router-link>
+                            ))
+                          }
+                        </div>
+                      ))
+                    }
+                    {
+                      links.length - 1 === index ? (
+                        <div class='newLogo'>
+                          <router-link to='/' title='Selzentry HCP'>
+                            <img src='../assets/images/logo-triumeq-hcp.png' alt='Selzentry HCP'/>
+                          </router-link>
+                        </div>
+                        ) : ''
+                      }
+                  </div>
+
+                ))
+              }
+            </nav>
+          </div>
+        </div>
+      )
     }
   }
 </script>

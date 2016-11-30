@@ -94,7 +94,7 @@ import { mapGetters, mapState } from 'vuex'
 
 export default {
   computed: {
-    ...mapState([ 'isiActive', 'isiSeen' ]),
+    ...mapState([ 'isiActive', 'isiSeen', 'windowHeight' ]),
     ...mapGetters([ 'mobile' ]),
     isiClasses () {
       const { mobile, isiActive, isiSeen } = this
@@ -103,9 +103,19 @@ export default {
         isiSeenHeight: mobile && !isiActive && isiSeen,
         isiNotSeenHeight: mobile && !isiActive && isiSeen === false
       }
+    },
+    isiStyles () {
+      if (this.mobile && this.isiActive) {
+        const headerPadHeight = document.querySelector('.header-pad').offsetHeight
+        return {
+          height: `${this.windowHeight - headerPadHeight}px`,
+          minHeight: `${this.windowHeight - headerPadHeight}px`,
+          maxHeight: '4000px'
+        }
+      }
+      return
     }
   },
-
   methods: {
     toggleISI () {
       if (this.mobile) {
@@ -113,7 +123,8 @@ export default {
         if (!this.isiSeen) this.$store.commit('toggleIsiSeen')
       }
     }
-  }
+  },
+  name: 'ISI'
 }
 </script>
 

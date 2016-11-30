@@ -33,6 +33,7 @@
 
 - [ ] isiActive = !headerActive, headerActive = !isiActive
         #header remove 'show-nav' class
+- [ ] Fix logo top and background color
 
 ----------------------------------------------------------------------------------------
 ## Navigation

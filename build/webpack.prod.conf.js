@@ -79,13 +79,13 @@ var webpackConfig = merge(baseWebpackConfig, {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'manifest',
       chunks: ['vendor']
-    }),
-    new PrerenderSpaPlugin(
-      // Path to compiled app
-      path.join(__dirname, '../dist'),
-      // List of endpoints you wish to prerender
-      [ '/' ]
-    )
+    })
+    // new PrerenderSpaPlugin(
+    //   // Path to compiled app
+    //   path.join(__dirname, '../dist'),
+    //   // List of endpoints you wish to prerender
+    //   [ '/' ]
+    // )
   ]
 })
 

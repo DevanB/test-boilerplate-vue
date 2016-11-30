@@ -1,5 +1,5 @@
 <template>
-  <img v-show='mobileLandscape' src='~assets/images/mobile-landscape-message.png' class='mobile-landscape-message-image' alt='This website is best viewed in portrait mode on mobile devices. Please rotate your device.'/>
+  <img v-show='mobileLandscape' src='/static/images/mobile-landscape-message.png' class='mobile-landscape-message-image' alt='This website is best viewed in portrait mode on mobile devices. Please rotate your device.'/>
 </template>
 
 <script>

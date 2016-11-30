@@ -3,11 +3,11 @@
     <div class='header-pad'>
       <UtilityLinks/>
       <div class='menu-home-button'>
-        <router-link to='/'><img class='home-icon' src='~assets/images/home-button.svg' width='100%' alt='Home'></router-link>
+        <router-link to='/'><img class='home-icon' src='/static/images/home-button.svg' width='100%' alt='Home'></router-link>
       </div>
       <Navigation v-bind:columns='3'/>
       <div class='logo content-mobile'>
-        <router-link to='/' title='Selzentry HCP'><img src='~assets/images/logo-triumeq-hcp.png' id='mobileImg' alt='Selzentry HCP'/></router-link>
+        <router-link to='/' title='Selzentry HCP'><img src='/static/images/logo-triumeq-hcp.png' id='mobileImg' alt='Selzentry HCP'/></router-link>
       </div>
     </div>
   </header>

@@ -6,10 +6,10 @@
         Visit <a class='modal' href='http://www.fda.gov/medwatch'>www.fda.gov/medwatch</a>, or call 1-800-FDA-1088.
       </p>
       <ul class='viiv-image-links'>
-        <li><a href='https://viivhealthcare.com' target='_blank'><img src='~assets/images/viiv-logo.svg' alt=''></a></li>
-        <li><a href='http://viivconnect.com' target='_blank'><img src='~assets/images/viiv-for-you.svg' alt=''></a></li>
-        <li><a href='https://www.contactus.gsk.com/callback/index.html' target='_blank'><img src='~assets/images/viiv-contact-us.png' alt=''></a></li>
-        <li><a href='https://www.contactus.gsk.com/callback/index.html' target='_blank'><img src='~assets/images/viiv-request-sales-professional.png' alt=''></a></li>
+        <li><a href='https://viivhealthcare.com' target='_blank'><img src='/static/images/viiv-logo.svg' alt=''></a></li>
+        <li><a href='http://viivconnect.com' target='_blank'><img src='/static/images/viiv-for-you.svg' alt=''></a></li>
+        <li><a href='https://www.contactus.gsk.com/callback/index.html' target='_blank'><img src='/static/images/viiv-contact-us.png' alt=''></a></li>
+        <li><a href='https://www.contactus.gsk.com/callback/index.html' target='_blank'><img src='/static/images/viiv-request-sales-professional.png' alt=''></a></li>
       </ul>
       <p>
         TRIUMEQ and TIVICAY are registered trademarks of the ViiV Healthcare group of companies.

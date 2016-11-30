@@ -6,6 +6,7 @@
 - [ ] Change mutation types, action names to UPPERCASE
 - [ ] Extract Navigation to external file
 - [ ] Add vue-helmet or vue-meta
+- [ ] Add a polyfill for promises on IE9+
 
 ## Sidebar / ISI
 
@@ -18,7 +19,7 @@
         isiSeen = !isiSeen || isiSeen
         #sidebar scrollTop(0)
 - [ ] Add animations to ISI opening/closing
-- [ ] Add animation of arrow rotating
+- [x] Add animation of arrow rotating
 
 ----------------------------------------------------------------------------------------
 ## Footer

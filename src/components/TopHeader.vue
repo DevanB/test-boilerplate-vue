@@ -6,7 +6,7 @@
         <router-link to='/'><img class='home-icon' src='/static/images/home-button.svg' width='100%' alt='Home'></router-link>
       </div>
       <Navigation v-bind:columns='3'/>
-      <div class='logo content-mobile'>
+      <div class='logo'>
         <router-link to='/' title='Selzentry HCP'><img src='/static/images/logo-triumeq-hcp.png' id='mobileImg' alt='Selzentry HCP'/></router-link>
       </div>
     </div>
@@ -25,7 +25,8 @@
 
 <style lang='scss' scoped>
   @import '../scss/main';
-  #header {
+
+  header {
     background: $white;
     height: auto;
     padding: 0;
@@ -76,12 +77,11 @@
     max-width: 15.5em;
     opacity: 1;
     position: absolute;
-    top: 55%;
+    top: 72%;
     vertical-align: top;
     width: 44%;
     z-index: 12;
     @include transform(translateX(-50%) translateY(-50%));
-    @include transition(all .25s ease-in-out);
     
     img {
       max-width: 100%;
@@ -96,20 +96,6 @@
       position: static;
       width: 100%;
       @include transform(none);
-    }
-  }
-
-  .show-nav {
-    @include media($small-desktop) {
-      .navigation {
-        padding-top: 1% !important;
-        padding-bottom: 60px;
-        .grouping {
-          h3 i {
-            display: none;
-          }
-        }
-      }
     }
   }
 </style>

@@ -120,7 +120,7 @@
     },
     render (h) {
       return (
-        <div>
+        <span>
           <div on-click={ this.toggleNavigation } class='menu-icon'>
             <span></span>
             <span></span>
@@ -158,7 +158,7 @@
               }
             </nav>
           </div>
-        </div>
+        </span>
       )
     }
   }

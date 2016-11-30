@@ -9,16 +9,18 @@
   }
 }
 
-.triumeq.hcp #header .logo,
-.patient-savings #header .logo,
-.resources #header .logo,
-.risks-and-side-effects #header .logo {
-  top: 75%;
-}
-
-.hla-screening #header .logo,
-.dosing-considerations #header .logo {
-  top: 57%;
+.show-nav {
+  @include media($small-desktop) {
+    .navigation {
+      padding-top: 1% !important;
+      padding-bottom: 60px;
+      .grouping {
+        h3 i {
+          display: none;
+        }
+      }
+    }
+  }
 }
 
 #header.minimal {
@@ -31,14 +33,9 @@
 
   .logo {
     @include media($small-desktop) {
+      display: none;
       filter: alpha(opacity=0);
       opacity: 0;
-    }
-  }
-
-  .logo {
-    @include media($small-desktop) {
-      display: none;
     }
   }
 
@@ -116,19 +113,16 @@ section.sub-menu.fixed {
     display: table-row;
     a {
       display: table-cell;
+      letter-spacing: -.05em;
+      padding-bottom: 0;
+      top: 0;
       vertical-align: middle;
-    }
-  }
 
-  li a {
-    letter-spacing: -.05em;
-    padding-bottom: 0;
-    top: 0;
-
-    &:before {
-      bottom: 0;
-      position: absolute;
-      top: auto;
+      &:before {
+        bottom: 0;
+        position: absolute;
+        top: auto;
+      }
     }
   }
 
@@ -144,46 +138,58 @@ section.sub-menu.fixed {
   position: fixed;
   top: 0;
   z-index: 1000;
+
   .sub-menu {
     opacity: 0;
     visibility: hidden;
   }
+
   .logo {
     display: inline-block;
     opacity: 1;
+
     img {
       height: auto;
       width: 100%;
     }
+
     @include media($small-desktop) {
       display: none;
       position: absolute;
       top: 0;
     }
   }
+
   .menu-icon {
     cursor: pointer;
+    
     span:first-child {
       @include transform(translateY(11px) rotate(45deg));
     }
+    
     span:last-child {
       @include transform(translateY(-11px) rotate(-45deg));
     }
+    
     span:nth-child(2) {
       opacity: 0;
       visibility: hidden;
     }
+    
     .menu-home-button {
       display: none;
     }
+    
     .navigation {
       opacity: 1;
       visibility: visible;
       @include transform(scale(1));
     }
+    
     &:before {
       opacity: 1;
     }
+    
     @include media($small-desktop) {
       left: 0;
       position: relative;

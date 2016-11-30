@@ -4,7 +4,7 @@
       <div class='scrollable-content'>
         <div class='body-int-bg-wrap'><div class='body-int-bg'></div></div>
         <TopHeader/>
-        <div class='main-column'>
+        <div class='main-column' :style='mainColumHeight'>
           <div id='content'>
             <section class='sub-menu-offset'></section>
             <router-view/>
@@ -24,6 +24,8 @@ import TopHeader from './components/TopHeader'
 import MobileLandscapeMessage from './components/MobileLandscapeMessage'
 import ISI from './components/ISI'
 
+import { mapGetters, mapState } from 'vuex'
+
 export default {
   beforeDestroy () {
     window.removeEventListener('resize', this.setWindowWidth)
@@ -31,8 +33,18 @@ export default {
   },
   components: { BottomFooter, ISI, MobileLandscapeMessage, TopHeader },
   computed: {
+    ...mapState([ 'isiActive', 'isiSeen', 'windowHeight' ]),
+    ...mapGetters([ 'mobile' ]),
     mobile () {
       return this.$store.getters.mobile
+    },
+    mainColumHeight () {
+      if (this.mobile) {
+        return {
+          marginTop: `166px`
+        }
+      }
+      return
     }
   },
   methods: {

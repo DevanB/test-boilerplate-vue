@@ -121,6 +121,7 @@ export default {
       if (this.mobile) {
         this.$store.commit('toggleIsiActive')
         if (!this.isiSeen) this.$store.commit('toggleIsiSeen')
+        document.getElementById('sidebar').scrollTop = 0
       }
     }
   },
@@ -151,9 +152,9 @@ export default {
     padding: 10px;
     position: fixed;
     transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0, 0, 0);
     width: 100%;
     z-index: 1000;
-    -webkit-transform: translate3d(0, 0, 0);
     a {
       color: $colorQuin;
     }
@@ -201,6 +202,7 @@ export default {
       overflow-y: scroll;
       .isi-control {
         @include transform(rotate(180deg));
+        @include transition-duration(0.45s);
       }
     }
     .asterisk {
@@ -228,7 +230,6 @@ export default {
       display: block;
       font-size: 85%;
       height: auto;
-      /*height: 100%;*/
       overflow-y: scroll;
       padding: 20px;
       position: fixed;
@@ -398,6 +399,9 @@ export default {
     margin-top: 0;
     position: fixed;
     right: 20px;
+
+    @include transform(rotate(360deg));
+    @include transition-duration(0.45s);
   }
 
   .added-indications {

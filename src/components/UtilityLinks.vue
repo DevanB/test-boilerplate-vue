@@ -61,13 +61,10 @@
       display: inline-block;
       float: left;
       font-family: $open-sans;
-      /*font-size: 0.7333em;*/
-      font-size: 1em;
+      font-size: 0.7333em;
       left: 0;
       margin-bottom: 0;
-      /*margin-left: 0;*/
-      margin-left: 20px;
-      /*padding-top: 1.5em;*/
+      margin-left: 0;
       padding-top: 1em;
       position: relative;
       right: initial;

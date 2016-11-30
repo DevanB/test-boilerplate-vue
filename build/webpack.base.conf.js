@@ -2,8 +2,8 @@ var path = require('path')
 var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
-require('es6-promise').polyfill()
-
+// require('es6-promise').polyfill()
+require('babel-polyfill')
 var env = process.env.NODE_ENV
 // check env & config/index.js to decide weither to enable CSS Sourcemaps for the
 // various preprocessor loaders added to vue-loader at the end of this file

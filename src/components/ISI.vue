@@ -94,7 +94,7 @@ import { mapGetters, mapState } from 'vuex'
 
 export default {
   computed: {
-    ...mapState([ 'isiActive', 'isiSeen', 'windowHeight' ]),
+    ...mapState([ 'isiActive', 'isiSeen', 'navigationOpen', 'windowHeight' ]),
     ...mapGetters([ 'mobile' ]),
     isiClasses () {
       const { mobile, isiActive, isiSeen } = this
@@ -119,7 +119,10 @@ export default {
   methods: {
     toggleISI () {
       if (this.mobile) {
-        this.$store.commit('toggleIsiActive')
+        if (this.navigationOpen) {
+          this.$store.commit('TOGGLE_NAVIGATION')
+        }
+        this.$store.commit('TOGGLE_ISI')
         if (!this.isiSeen) this.$store.commit('toggleIsiSeen')
         document.getElementById('sidebar').scrollTop = 0
       }

@@ -12,6 +12,10 @@
   line-height: 0;
 }
 
+.lock-scroll {
+  overflow-y: hidden !important;
+}
+
 .purple {
   color: $colorTert;
 }

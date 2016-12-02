@@ -39,10 +39,13 @@
       ...mapState([ 'isiActive', 'isiSeen' ]),
       footerStyles () {
         const { mobile, isiActive, isiSeen } = this
-        return {
-          isiSeenFooterHeight: mobile && !isiActive && isiSeen,
-          isiNotSeenFooterHeight: mobile && !isiActive && isiSeen === false
+        if (mobile) {
+          return {
+            isiSeenFooterHeight: mobile && !isiActive && isiSeen,
+            isiNotSeenFooterHeight: mobile && !isiActive && isiSeen === false
+          }
         }
+        return
       }
     },
     name: 'BottomFooter'

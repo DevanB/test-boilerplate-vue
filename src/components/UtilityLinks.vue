@@ -1,5 +1,5 @@
 <template>
-  <div class='bar-util'>
+  <div class='bar-util' ref='barUtil'>
     <p class='disclaimer'>This site is intended for US healthcare professionals only.</p>
     <ul>
       <li><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=1' target='_blank'>Prescribing Info with Boxed Warning <i class='fa fa-caret-down' aria-hidden='true'></i></a><span class='desktop-span-pipe'>|</span>
@@ -48,14 +48,16 @@
 
 <style lang='scss' scoped>
   @import '../scss/main';
+
   .disclaimer {
+    font-size: em(12.5);
+    letter-spacing: -.05em;
     position: absolute;
     right: 0;
-    width: 100%;
     top: 0;
-    font-size: em(12.5);
+    width: 100%;
     text-align: center;
-    letter-spacing: -.05em;
+
     @include media($small-desktop) {
       color: $colorTert;
       display: inline-block;
@@ -71,13 +73,16 @@
       text-align: left;
       width: auto;
     }
+
     @include media($px1144) {
       font-size: 0.875em;
     }
+    
     @include media($widescreen-desktop) {
       font-size: 0.925em;
     }
   }
+
   .bar-util {
     width: 100%;
     padding: 30px 20px 0 20px;
@@ -185,6 +190,7 @@
 
               &:hover {
                 color: $colorLght;
+                border-bottom: solid 1px rgba(255, 255, 255, 1);
                 &:before {
                   opacity: 1;
                   visibility: visible;
@@ -209,75 +215,6 @@
 
             &:nth-child(even) {
               padding-right: 1em;
-            }
-
-            &:nth-child(1) a:before {
-              content: 'Highlights of the Full\A Prescribing Information';
-            }
-
-            &:nth-child(2) a:before {
-              content: 'Indications and Usage';
-            }
-
-            &:nth-child(3) a:before {
-              content: 'Dosage and Administration';
-            }
-            
-            &:nth-child(4) a:before {
-              content: 'Dosage Forms and Strength';
-            }
-            
-            &:nth-child(5) a:before {
-              content: 'Contraindications';
-            }
-            
-            &:nth-child(6) a:before {
-              content: 'Warnings and Precautions';
-            }
-            
-            &:nth-child(7) a:before {
-              content: 'Adverse Reactions';
-            }
-            
-            &:nth-child(8) a:before {
-              content: 'Drug Interactions';
-            }
-            
-            &:nth-child(9) a:before {
-              content: 'Use in Specific Populations';
-            }
-            
-            &:nth-child(10) a:before {
-              content: 'Overdosage';
-            }
-            
-            &:nth-child(11) a:before {
-              content: 'Description';
-            }
-            
-            &:nth-child(12) a:before {
-              content: 'Clinical Pharmacology';
-            }
-            
-            &:nth-child(13) a:before {
-              content: 'Nonclinical Toxicology';
-            }
-            
-            &:nth-child(14) a:before {
-              content: 'HLA-B*5701 Clinical Studies';
-              display: none;
-            }
-            
-            &:nth-child(14) a:hover {
-              text-decoration: underline;
-            }
-            
-            &:nth-child(15) a:before {
-              content: 'How Supplied/Storage and Handling';
-            }
-            
-            &:nth-child(16) a:before {
-              content: 'Patient Counseling Information';
             }
           }
         }
@@ -401,38 +338,6 @@
               color: transparentize($colorLght,.5);
               i {
                 color: transparentize($colorLght,.5);
-              }
-            }
-          }
-
-          &:nth-child(2) {
-            li {
-              &:nth-child(1) a:before {
-                content: 'What is the most important\A information I should know\A about TRIUMEQ? ';
-              }
-              &:nth-child(2) a:before {
-                content: 'What is TRIUMEQ?';
-              }
-              &:nth-child(3) a:before {
-                content: 'Who should not take TRIUMEQ?';
-              }
-              &:nth-child(4) a:before {
-                content: 'What should I tell my healthcare\A provider before taking TRIUMEQ?';
-              }
-              &:nth-child(5) a:before {
-                content: 'How should I take TRIUMEQ?';
-              }
-              &:nth-child(6) a:before {
-                content:'What are the possible side\A effects of TRIUMEQ?';
-              }
-              &:nth-child(7) a:before {
-                content: 'How should I store TRIUMEQ?';
-              }
-              &:nth-child(8) a:before {
-                content: 'General information about\A the safe and effective use\A of TRIUMEQ';
-              }
-              &:nth-child(9) a:before {
-                content: 'What are the ingredients\A in TRIUMEQ?';
               }
             }
           }

@@ -1,4 +1,7 @@
 <script>
+  import MenuButton from './MenuButton'
+  import { mapGetters, mapState } from 'vuex'
+
   const columnize = (links, numberPerColumn) => (
     links.reduce((ar, it, i) => {
       const ix = Math.floor(i / numberPerColumn)
@@ -10,9 +13,13 @@
     }, [])
   )
   export default {
+    components: { MenuButton },
+    computed: {
+      ...mapGetters([ 'mobile' ]),
+      ...mapState([ 'isiActive', 'navigationOpen' ])
+    },
     data () {
       return {
-        showNavigation: false,
         links: [
           {
             title: 'About Selzentry',
@@ -108,7 +115,10 @@
     },
     methods: {
       toggleNavigation () {
-        this.showNavigation = !this.showNavigation
+        this.$store.commit('TOGGLE_NAVIGATION')
+        if (this.isiActive) {
+          this.$store.commit('TOGGLE_ISI')
+        }
       }
     },
     name: 'Navigation',
@@ -120,26 +130,30 @@
     },
     render (h) {
       return (
-        <span>
-          <div on-click={ this.toggleNavigation } class='menu-icon'>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <div class='navigation' v-show={ this.showNavigation }>
+        <span on-click={this.toggleNavigation}>
+          <MenuButton />
+          <div class='navigation' v-show={ this.navigationOpen }>
             <nav>
               {
                 columnize(this.links, this.columns).map((linkGroup, index, links) => (
-                  <div class='menuColumn'>
+                  <div class='menu-column'>
                     {
                       linkGroup.map((group, index) => (
-                        <div class='group'>
-                          <router-link to={ group.url }><h3>{ group.title }</h3></router-link>
-                          {
-                            group.children.map((childLink, index) => (
-                              <router-link to={ childLink.url }><li>{ childLink.title }</li></router-link>
-                            ))
-                          }
+                        <div class='grouping'>
+                          <h3>
+                            <router-link to={ group.url }>{ group.title }</router-link>
+                            <i v-show={ this.mobile } class='fa fa-caret-right'></i>
+                          </h3>
+                          <ul>
+                            {
+                              group.children.map((childLink, index) => (
+                                <li>
+                                  <router-link to={ childLink.url }>{ childLink.title }</router-link>
+                                  <i class='fa fa-angle-right'></i>
+                                </li>
+                              ))
+                            }
+                          </ul>
                         </div>
                       ))
                     }
@@ -153,7 +167,6 @@
                         ) : ''
                       }
                   </div>
-
                 ))
               }
             </nav>
@@ -166,85 +179,40 @@
 
 <style lang='scss' scoped>
   @import '../scss/main';
-  
-  .menu-icon {
-    cursor: pointer;
-    display: inline-block;
-    margin: .5em 0 1em 20px;
-    padding: .5em;
-    position: relative;
-    vertical-align: top;
-    width: 3em;
-    z-index: 12;
-
-    &:before {
-      color: $colorTert;
-      content: 'MENU';
-      font-size: 80%;
-      font-weight: bold;
-      left: 50%;
-      padding-bottom: 0;
-      position: absolute;
-      top: 0;
-      @include transform(translateY(-100%) translateX(-50%));
-      
-      @include media($small-desktop) {
-        padding-bottom: .5em;
-      }
-    }
-    
-    span {
-      background: $colorQuin;
-      display: block;
-      height: 0.25em;
-      margin: 0 auto 0.4375em;
-      opacity: 1;
-      visibility: visibile;
-      width: 100%;
-      @include transition(0.25s all ease-in-out);
-    }
-
-    span:nth-child(2) {
-      max-width: 2.3125em;
-    }
-
-    @include media($small-desktop) {
-      margin-bottom: 0;
-      margin-left: 0;
-      margin-right: 2.375em;
-      margin-top: 0;
-      padding: 0;
-      top: 7px;
-      width: 2.6875em;
-    }
-  }
 
   .navigation {
     background: $colorBG;
-    height: 100%;
+    height: 100vh;
     left: 0;
-    opacity: 0;
+    margin-left: -6em;
     overflow-y: scroll;
-    padding-top:1em;
+    padding-top: 1em;
+    padding-top: 20px;
     position: fixed;
-    top: 0;
-    visibility: hidden;
-    width: 100%;
+    top: 8px;
+    width: 100vw;
     z-index: 10;
     @include transform(scale(0.9));
     @include transition(.1s all ease-in-out);
 
+    nav {
+      padding-bottom: 160px;
+    }
+
+    @include media($small-desktop) {
+      padding-top: 0;
+      
+      nav {
+        padding-bottom: inherit;
+      }
+    }
+
     .menu-column {
       margin: 0 30px 0 30px;
-      @include media($small-desktop) {
-        margin: 0;
-        margin-right: 2rem;
-        @include span-columns(3.5 of 14, block-collapse);
-      }
-
+      
       &:first-child {
         @include media($small-desktop) {
-          @include shift(2 of 14);
+          @include shift(1 of 14);
         }
       }
 
@@ -253,6 +221,12 @@
         @include media($small-desktop) {
           display: block;
         }
+      }
+
+      @include media($small-desktop) {
+        margin: 0;
+        margin-right: 2rem;
+        @include span-columns(3.5 of 14, block-collapse);
       }
     }
 
@@ -265,7 +239,7 @@
         }
       }
     }
-
+    
     .menu-column:last-child {
       @include media($small-desktop) {
         margin-right: 0px;
@@ -280,6 +254,7 @@
           @include transform(rotate(90deg));
           @include transition(all .2s ease-in-out);
         }
+
         ul {
           display: block;
         }
@@ -322,7 +297,6 @@
       }
 
       a {
-        color: $colorQuin;
         font-size:84%;
       }
 
@@ -366,13 +340,11 @@
     }
 
     @include media($small-desktop) {
-      padding-top: 14.4rem;
-      @include span-columns(14.6 of 18, block-collapse);
+      padding-top: 2rem;
     }
   }
 
   .newLogo {
-    display: none;
     @include media($small-desktop) {
       height: auto;
       display: inline-block;

@@ -3,17 +3,19 @@ import Vuex from 'vuex'
 
 // Magic numbers from breakpoints in _grid-settings.scss.
 // Width + 1 = max width
-const MOBILE_MAX_WIDTH = 784
-const TABLET_PORTRAIT_MAX_WIDTH = 957
-const SMALL_DESKTOP_MAX_WIDTH = 1265
+const MOBILE_MAX_WIDTH = 767
+const TABLET_PORTRAIT_MAX_WIDTH = 956
+const SMALL_DESKTOP_MAX_WIDTH = 1264
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
+    headerHeight: 0,
     isiActive: false,
     isiSeen: false,
     navigationOpen: false,
+    scrollPosition: 0,
     windowHeight: 0,
     windowWidth: 0
   },
@@ -24,40 +26,52 @@ const store = new Vuex.Store({
       const x = state.windowWidth
       let breakpoint
       switch (true) {
-        case (x < MOBILE_MAX_WIDTH):
+        case (x <= MOBILE_MAX_WIDTH):
           breakpoint = 'mobile'
           break
-        case (x < TABLET_PORTRAIT_MAX_WIDTH):
-          breakpoint = 'table-portrait'
+        case (x <= TABLET_PORTRAIT_MAX_WIDTH):
+          breakpoint = 'tablet-portrait'
           break
-        case (x < SMALL_DESKTOP_MAX_WIDTH):
+        case (x <= SMALL_DESKTOP_MAX_WIDTH):
           breakpoint = 'small-desktop'
           break
-        default: // WIDESCREEN_DESKTOP_MIN_WIDTH
+        default:
           breakpoint = 'widescreen-desktop'
           break
       }
       return breakpoint
     },
+    minimal: state => {
+      return state.scrollPosition >= 22
+    },
     mobile: state => {
-      return state.windowWidth < MOBILE_MAX_WIDTH
+      return state.windowWidth < TABLET_PORTRAIT_MAX_WIDTH
     },
     mobileLandscape: (state, getters) => {
       return getters.mobile && state.windowWidth >= state.windowHeight
     }
   },
   mutations: {
-    toggleIsiActive (state) {
+    TOGGLE_ISI (state) {
       state.isiActive = !state.isiActive
     },
     toggleIsiSeen (state) {
       state.isiSeen = !state.isiSeen || state.isiSeen
+    },
+    TOGGLE_NAVIGATION (state) {
+      state.navigationOpen = !state.navigationOpen
+    },
+    SET_SCROLL_POSITION (state, n) {
+      state.scrollPosition = n
     },
     setWindowWidth (state, n) {
       state.windowWidth = n
     },
     setWindowHeight (state, n) {
       state.windowHeight = n
+    },
+    setHeaderHeight (state, n) {
+      state.headerHeight = n
     }
   }
 })

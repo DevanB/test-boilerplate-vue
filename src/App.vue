@@ -1,10 +1,9 @@
 <template>
   <div>
     <div class='wrap'>
-      <div class='scrollable-content'>
-        <div class='body-int-bg-wrap'><div class='body-int-bg'></div></div>
+      <div :class='scrollableContentClasses' @scroll='setScrollPosition'>
         <TopHeader/>
-        <div class='main-column' :style='mainColumHeight'>
+        <div class='main-column'>
           <div id='content'>
             <section class='sub-menu-offset'></section>
             <router-view/>
@@ -33,15 +32,18 @@ export default {
   },
   components: { BottomFooter, ISI, MobileLandscapeMessage, TopHeader },
   computed: {
-    ...mapState([ 'isiActive', 'isiSeen', 'windowHeight' ]),
+    ...mapState([ 'isiActive', 'isiSeen', 'navigationOpen', 'windowHeight' ]),
     ...mapGetters([ 'mobile' ]),
-    mobile () {
-      return this.$store.getters.mobile
+    scrollableContentClasses () {
+      return {
+        'scrollable-content': true,
+        'lock-scroll': this.isiActive || this.navigationOpen
+      }
     },
     mainColumHeight () {
       if (this.mobile) {
         return {
-          marginTop: `166px`
+          marginTop: `165px`
         }
       }
       return
@@ -49,12 +51,17 @@ export default {
   },
   methods: {
     setWindowWidth () {
-      let windowWidth = document.documentElement.clientWidth
+      const windowWidth = document.documentElement.clientWidth
       this.$store.commit('setWindowWidth', windowWidth)
     },
     setWindowHeight () {
-      let windowHeight = document.documentElement.clientHeight
+      const windowHeight = document.documentElement.clientHeight
       this.$store.commit('setWindowHeight', windowHeight)
+    },
+    setScrollPosition () {
+      const scrollableContentDiv = document.querySelector('.scrollable-content')
+      const top = (scrollableContentDiv.pageYOffset || scrollableContentDiv.scrollTop) - (scrollableContentDiv.clientTop || 0)
+      this.$store.commit('SET_SCROLL_POSITION', top)
     }
   },
   mounted () {
@@ -123,6 +130,22 @@ export default {
   .ie .scrollable-content {
     @include media($small-desktop) {
       width: 79.5%;
+    }
+  }
+
+  .main-column {
+    margin-top: 155px;
+    overflow: auto;
+    width: 100%;
+    
+    @include media($tablet-portrait){
+      margin-top: 195px;
+    }
+    
+    @include media($small-desktop) {
+      margin-top: 0;
+      overflow: visible;
+      display: inline-block;
     }
   }
 

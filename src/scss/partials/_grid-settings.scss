@@ -1,4 +1,4 @@
-//Neat init settings
+// Neat init settings
 $grid-columns: 18;
 $gutter: 1.25em;
 $max-width: 100%;
@@ -7,14 +7,16 @@ $visual-grid-color: rgba(0, 0, 0, 1) !global;
 $visual-grid-index: front !global;
 $visual-grid-opacity: .11 !global;
 
-//Breakpoints
+// Breakpoints
 // If you change the min-width of the mobile breakpoint, make sure to change it also in App.vue!
-$tablet-portrait: new-breakpoint( min-width 783px  18  ); // Tablet Portrait babybear
+// Mobile first <= 767px (default)
+$tablet-portrait: new-breakpoint( min-width 767px  18  ); // Tablet Portrait babybear
 $small-desktop: new-breakpoint( min-width 956px  18  ); // Small desktop or tablet landscape mamabear
-$small-desktop-down: new-breakpoint( max-width 955px 18  ); // mamabear-down
 $widescreen-desktop: new-breakpoint( min-width 1264px 18  ); // Widescreen desktop papabear
 
-//Fine-tuning Breakpoints
+$small-desktop-down: new-breakpoint( max-width 955px 18  ); // mamabear-down
+
+// Fine-tuning Breakpoints
 $px1024: new-breakpoint( min-width 1024px 18  );
 $px1144: new-breakpoint( min-width 1144px 18  );
 $px1440: new-breakpoint( min-width 1440px 18  );

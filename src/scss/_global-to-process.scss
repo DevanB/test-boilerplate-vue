@@ -170,11 +170,6 @@ h3 {
 /*----- HOME PAGE STYLES -----*/
 // HERO STYLES
 
-.tivicay.hcp .wrap {
-  background: url('/images/bg-main.jpg') left top no-repeat;
-  background-size: 100% auto;
-}
-
 .triumeq.hcp .main-column {
   @include media($small-desktop) {
     margin-top: -170px;
@@ -187,15 +182,6 @@ h3 {
 .triumeq.hcp .ie .main-column {
   @include media($small-desktop) {
     margin-top: -235px;
-  }
-}
-
-.main-column {
-  overflow: auto;
-  width: 100%;
-  @include media($small-desktop) {
-    overflow: visible;
-    display: inline-block;
   }
 }
 

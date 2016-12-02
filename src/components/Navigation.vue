@@ -159,7 +159,7 @@
                     }
                     {
                       links.length - 1 === index ? (
-                        <div class='newLogo'>
+                        <div class='newLogo' v-show={ !this.mobile }>
                           <router-link to='/' title='Selzentry HCP'>
                             <img src='/static/images/logo-triumeq-hcp.png' alt='Selzentry HCP'/>
                           </router-link>
@@ -184,15 +184,13 @@
     background: $colorBG;
     height: 100vh;
     left: 0;
-    margin-left: -6em;
     overflow-y: scroll;
     padding-top: 1em;
-    padding-top: 20px;
     position: fixed;
-    top: 8px;
+    top: 156px;
     width: 100vw;
     z-index: 10;
-    @include transform(scale(0.9));
+    
     @include transition(.1s all ease-in-out);
 
     nav {
@@ -200,11 +198,7 @@
     }
 
     @include media($small-desktop) {
-      padding-top: 0;
       
-      nav {
-        padding-bottom: inherit;
-      }
     }
 
     .menu-column {
@@ -339,8 +333,17 @@
       border-bottom: 0;
     }
 
+    @include media($tablet-portrait) {
+      top: 196px;
+    }
+
     @include media($small-desktop) {
-      padding-top: 2rem;
+      top: 61px;
+      width: 90%;
+
+      nav {
+        padding-bottom: inherit;
+      }
     }
   }
 

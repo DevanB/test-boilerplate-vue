@@ -1,4 +1,4 @@
-# viiv-selzentry-hcp-v2-vue
+# test-boilerplate-vue
 
 > A Vue.js project
 

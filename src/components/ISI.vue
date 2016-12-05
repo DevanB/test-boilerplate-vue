@@ -1,5 +1,5 @@
 <template>
-  <div id='sidebar' @click='toggleISI' v-bind:class='isiClasses' v-bind:style='isiStyles'>
+  <div id='sidebar' @click='toggleIsi' v-bind:class='isiClasses' v-bind:style='isiStyles'>
     <i v-show='mobile' class='fa fa-angle-up isi-control'></i>
     <div class='indications-usage'>
       <h2>Indications and Usage:</h2>
@@ -90,7 +90,7 @@
 </template>
 
 <script>
-import { mapGetters, mapState } from 'vuex'
+import { mapActions, mapGetters, mapState } from 'vuex'
 
 export default {
   computed: {
@@ -117,16 +117,7 @@ export default {
     }
   },
   methods: {
-    toggleISI () {
-      if (this.mobile) {
-        if (this.navigationOpen) {
-          this.$store.commit('TOGGLE_NAVIGATION')
-        }
-        this.$store.commit('TOGGLE_ISI')
-        if (!this.isiSeen) this.$store.commit('toggleIsiSeen')
-        document.getElementById('sidebar').scrollTop = 0
-      }
-    }
+    ...mapActions([ 'toggleIsi' ])
   },
   name: 'ISI'
 }
@@ -205,7 +196,7 @@ export default {
       overflow-y: scroll;
       .isi-control {
         @include transform(rotate(180deg));
-        @include transition-duration(0.45s);
+        @include transition(all .2s ease-in-out);
       }
     }
     .asterisk {

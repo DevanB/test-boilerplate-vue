@@ -9,17 +9,19 @@
       <div class='logo'>
         <router-link to='/' title='Selzentry HCP'><img src='/static/images/logo-triumeq-hcp.png' id='mobileImg' alt='Selzentry HCP'/></router-link>
       </div>
+      <SubNavigation/>
     </div>
   </header>
 </template>
 
 <script>
   import Navigation from './Navigation'
+  import SubNavigation from './SubNavigation'
   import UtilityLinks from './UtilityLinks'
   import { mapGetters, mapState } from 'vuex'
 
   export default {
-    components: { Navigation, UtilityLinks },
+    components: { Navigation, SubNavigation, UtilityLinks },
     computed: {
       ...mapState([ 'navigationOpen' ]),
       ...mapGetters([ 'minimal' ]),

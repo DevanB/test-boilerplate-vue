@@ -1,5 +1,5 @@
 <template>
-  <div :class='menuIconClasses'>
+  <div @click='this.toggleNavigation' :class='menuIconClasses'>
     <span></span>
     <span></span>
     <span></span>
@@ -7,11 +7,11 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import { mapActions, mapState } from 'vuex'
 
   export default {
     computed: {
-      ...mapState([ 'navigationOpen' ]),
+      ...mapState([ 'isiActive', 'navigationOpen' ]),
       menuIconClasses () {
         return {
           'menu-icon': true,
@@ -19,11 +19,14 @@
         }
       }
     },
+    methods: {
+      ...mapActions([ 'toggleNavigation' ])
+    },
     name: 'MenuIcon'
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
   @import '../scss/main';
 
   .menu-icon {

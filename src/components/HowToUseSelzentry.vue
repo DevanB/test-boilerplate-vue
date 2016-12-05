@@ -3,7 +3,7 @@
 
 <script>
   export default {
-    name: 'AboutSelzentry'
+    name: 'HowToUseSelzentry'
   }
 </script>
 

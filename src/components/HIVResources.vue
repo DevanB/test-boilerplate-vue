@@ -3,9 +3,9 @@
 
 <script>
   export default {
-    name: 'CCR5Prevalence'
+    name: 'HIVResources'
   }
 </script>
 
-<style>
+<style lang='scss' scoped>
 </style>

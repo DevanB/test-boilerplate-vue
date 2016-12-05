@@ -3,9 +3,9 @@
 
 <script>
   export default {
-    name: 'ImportanceOfTropismTesting'
+    name: 'VirologicResponse'
   }
 </script>
 
-<style>
+<style lang='scss' scoped>
 </style>

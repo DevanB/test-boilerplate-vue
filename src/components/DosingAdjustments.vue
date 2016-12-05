@@ -3,9 +3,9 @@
 
 <script>
   export default {
-    name: 'TropismAccessProgram'
+    name: 'DosingAdjustments'
   }
 </script>
 
-<style>
+<style  lang='scss' scoped>
 </style>

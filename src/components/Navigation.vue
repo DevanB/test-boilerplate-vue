@@ -1,123 +1,27 @@
 <script>
   import MenuButton from './MenuButton'
-  import { mapGetters, mapState } from 'vuex'
+  import { mapActions, mapGetters, mapState } from 'vuex'
+  import columnize from '../helpers/columnize'
+  import links from '../links'
 
-  const columnize = (links, numberPerColumn) => (
-    links.reduce((ar, it, i) => {
-      const ix = Math.floor(i / numberPerColumn)
-      if (!ar[ix]) {
-        ar[ix] = []
-      }
-      ar[ix].push(it)
-      return ar
-    }, [])
-  )
   export default {
     components: { MenuButton },
     computed: {
       ...mapGetters([ 'mobile' ]),
-      ...mapState([ 'isiActive', 'navigationOpen' ])
+      ...mapState([ 'navigationOpen', 'openGroup' ])
     },
     data () {
       return {
-        links: [
-          {
-            title: 'About Selzentry',
-            url: 'about-selzentry',
-            children: [{
-              title: 'Mechanisms of Action',
-              url: '#mechanisms-of-action'
-            }]
-          }, {
-            title: 'Clinical Data',
-            url: 'clinical-data',
-            children: [{
-              title: 'Study Design',
-              url: '#motivate-study-design'
-            }, {
-              title: 'Demographics and Baseline Characteristics',
-              url: '#motivate-demographics'
-            }, {
-              title: 'Virologic Response',
-              url: '#motivate-virologic-response'
-            }, {
-              title: 'CD4+ T-Cell Count Results',
-              url: '#motivate-cell-count-results'
-            }, {
-              title: 'Resistance',
-              url: '#motivate-resistance'
-            }]
-          }, {
-            title: 'Risks and Side Effects',
-            url: 'risks-and-side-effects',
-            children: [{
-              title: 'Adverse Effects',
-              url: '#motivate-adverse-effects'
-            }, {
-              title: 'Laboratory Abnormalities',
-              url: '#motivate-laboratory-abnormalities'
-            }, {
-              title: 'Warnings and Precautions',
-              url: '#warnings-and-precautions'
-            }]
-          }, {
-            title: 'Viral Tropism',
-            url: 'viral-tropism',
-            children: [{
-              title: 'CCR5 Prevalence',
-              url: '#ccr5-prevalence'
-            }, {
-              title: 'Importance of Tropism Testing',
-              url: '#importance-of-tropism-testing'
-            }, {
-              title: 'Available Highly Sensitive Tropism Tests',
-              url: '#tropism-tests'
-            }, {
-              title: 'Tropism Access Program',
-              url: '#tropism-access-program'
-            }]
-          }, {
-            title: 'Dosing Considerations',
-            url: 'dosing-considerations',
-            children: [{
-              title: 'How To Use Selzentry',
-              url: '#how-to-use-selzentry'
-            }, {
-              title: 'Interactive Dosing Guide',
-              url: '#interactive-dosing-guide'
-            }, {
-              title: 'Dosing Adjustments',
-              url: '#dosing-adjustments'
-            }, {
-              title: 'Renal Impairment',
-              url: '#renal-impairment'
-            }]
-          }, {
-            title: 'Patient Assistance',
-            url: 'patient-assistance',
-            children: [{
-              title: 'Patient Assistance Programs',
-              url: '#patient-assistance-programs'
-            }]
-          }, {
-            title: 'Resources',
-            url: 'resources',
-            children: [{
-              title: 'HIV Resources',
-              url: '#hiv-resources'
-            }, {
-              title: 'MOA Video',
-              url: '#moa-video'
-            }]
-          }
-        ]
+        links
       }
     },
     methods: {
-      toggleNavigation () {
-        this.$store.commit('TOGGLE_NAVIGATION')
-        if (this.isiActive) {
-          this.$store.commit('TOGGLE_ISI')
+      ...mapActions([ 'setOpenGroup' ]),
+      caretClasses (groupTitle) {
+        return {
+          fa: true,
+          'fa-caret-right': true,
+          'open': this.mobile && this.openGroup === groupTitle
         }
       }
     },
@@ -130,7 +34,7 @@
     },
     render (h) {
       return (
-        <span on-click={this.toggleNavigation}>
+        <span>
           <MenuButton />
           <div class='navigation' v-show={ this.navigationOpen }>
             <nav>
@@ -139,16 +43,16 @@
                   <div class='menu-column'>
                     {
                       linkGroup.map((group, index) => (
-                        <div class='grouping'>
+                        <div onClick={ this.setOpenGroup.bind(this, group.title) } class='grouping'>
                           <h3>
-                            <router-link to={ group.url }>{ group.title }</router-link>
-                            <i v-show={ this.mobile } class='fa fa-caret-right'></i>
+                            { this.mobile ? group.title : <router-link to={ group.url }>{ group.title }</router-link> }
+                            <i v-show={ this.mobile } class={ this.caretClasses(group.title) }></i>
                           </h3>
-                          <ul>
+                          <ul v-show={ !this.mobile || this.openGroup === group.title }>
                             {
                               group.children.map((childLink, index) => (
                                 <li>
-                                  <router-link to={ childLink.url }>{ childLink.title }</router-link>
+                                  <router-link to={ `${group.url}${childLink.url}` }>{ childLink.title }</router-link>
                                   <i class='fa fa-angle-right'></i>
                                 </li>
                               ))
@@ -184,6 +88,7 @@
     background: $colorBG;
     height: 100vh;
     left: 0;
+    overflow-x: scroll;
     overflow-y: scroll;
     padding-top: 1em;
     position: fixed;
@@ -194,7 +99,7 @@
     @include transition(.1s all ease-in-out);
 
     nav {
-      padding-bottom: 160px;
+      padding-bottom: 180px;
     }
 
     @include media($small-desktop) {
@@ -211,26 +116,13 @@
       }
 
       ul {
-        display: none;
-        @include media($small-desktop) {
-          display: block;
-        }
+        display: block;
       }
 
       @include media($small-desktop) {
         margin: 0;
         margin-right: 2rem;
         @include span-columns(3.5 of 14, block-collapse);
-      }
-    }
-
-    .menu-column:nth-child(3), .menu-column:nth-child(3) {
-      ul {
-        display: none;
-        @include media($small-desktop) {
-          display: block;
-      
-        }
       }
     }
     
@@ -242,17 +134,10 @@
 
     .grouping {
       margin-bottom: 20px;
+    }
 
-      &.clicked {
-        h3 i {
-          @include transform(rotate(90deg));
-          @include transition(all .2s ease-in-out);
-        }
-
-        ul {
-          display: block;
-        }
-      }
+    .open {
+      @include transform(rotate(90deg));
     }
 
     h3 {

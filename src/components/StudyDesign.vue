@@ -3,9 +3,9 @@
 
 <script>
   export default {
-    name: 'PatientAssistancePrograms'
+    name: 'StudyDesign'
   }
 </script>
 
-<style>
+<style lang='scss' scoped>
 </style>

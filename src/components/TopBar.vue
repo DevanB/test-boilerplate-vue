@@ -6,3 +6,5 @@
     name: 'TopBar'
   }
 </script>
+
+<style lang='scss' scoped></style>

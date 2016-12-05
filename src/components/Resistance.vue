@@ -3,9 +3,9 @@
 
 <script>
   export default {
-    name: 'HowToUseSelzentry'
+    name: 'Resistance'
   }
 </script>
 
-<style>
+<style lang='scss' scoped>
 </style>

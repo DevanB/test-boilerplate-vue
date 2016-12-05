@@ -17,6 +17,15 @@
   overflow-y: hidden !important;
 }
 
+.page-section {
+  overflow: hidden;
+  width: 100%;
+  
+  @include media($small-desktop) {
+    width: 100%;
+  }
+}
+
 .purple {
   color: $colorTert;
 }

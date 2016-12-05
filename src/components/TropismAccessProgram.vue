@@ -3,9 +3,9 @@
 
 <script>
   export default {
-    name: 'HIVResources'
+    name: 'TropismAccessProgram'
   }
 </script>
 
-<style>
+<style lang='scss' scoped>
 </style>

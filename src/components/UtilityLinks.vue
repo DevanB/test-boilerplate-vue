@@ -2,7 +2,10 @@
   <div class='bar-util' ref='barUtil'>
     <p class='disclaimer'>This site is intended for US healthcare professionals only.</p>
     <ul>
-      <li><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=1' target='_blank'>Prescribing Info with Boxed Warning <i class='fa fa-caret-down' aria-hidden='true'></i></a><span class='desktop-span-pipe'>|</span>
+      <li>
+        <a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=1' target='_blank'>
+          Prescribing Info with Boxed Warning <i class='fa fa-caret-down' aria-hidden='true'></i>
+        </a><span class='desktop-span-pipe'>|</span>
         <ul class='nested-util'>
           <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=1' target='_blank'>Highlights of the Full <br>Prescribing Information</a></span></li>
           <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=3' target='_blank'>Indications and Usage</a></span></li>
@@ -22,7 +25,10 @@
           <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=34' target='_blank'>Patient Counseling Information</a></span></li>
         </ul>
       </li>
-      <li><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=38' target='_blank'>Medication Guide <i class='fa fa-caret-down' aria-hidden='true'></i></a><span class='desktop-span-pipe'>|</span>
+      <li>
+        <a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=38' target='_blank'>
+          Medication Guide <i class='fa fa-caret-down' aria-hidden='true'></i>
+        </a><span class='desktop-span-pipe'>|</span>
         <ul class='nested-util'>
           <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=38' target='_blank'>What is the most important information I should know <br>about TRIUMEQ? </a></span></li>
           <li><span><a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page=40' target='_blank'>What is TRIUMEQ?</a></span></li>
@@ -84,20 +90,9 @@
   }
 
   .bar-util {
-    width: 100%;
-    padding: 30px 20px 0 20px;
     margin-bottom: 1em;
-
-    .nested-util {
-      @include media($small-desktop) {
-        left: 0;
-        width: calc(100% + 1.4em);
-      }
-
-      @include media($small-desktop-down) {
-        display: none;
-      }
-    }
+    padding: 30px 20px 0 20px;
+    width: 100%;
 
     @include media($small-desktop) {
       padding: 0;
@@ -114,9 +109,11 @@
       > ul > li {
         position: relative;
         @include transition(all 0.2s ease-in-out);
+        
         &:hover {
           position: static;
         }
+        
         a:hover + .desktop-span-pipe {
           display: none;
         }
@@ -131,10 +128,6 @@
       }
     }
 
-    .desktop-span-pipe {
-      display: none;
-    }
-
     > ul {
       border-bottom: 1px solid #ccc;
       display: block;
@@ -142,6 +135,129 @@
       margin: 0;
       margin-top: -.25rem;
       padding: 0;
+
+      > li {
+        float: left;
+        position: relative;
+        text-align: center;
+        top: 50%;
+        @include transform(translateY(-50%));
+        
+        a {
+          bottom: 0;
+          color: $colorDark;
+          display: block;
+          font-size: em(12);
+          font-weight: bold;
+          height: 100%;
+          letter-spacing: -.05em;
+          line-height: em(22);
+          margin: -5px 0 0 0;
+          padding: 0;
+          vertical-align: bottom;
+
+          i {
+            display: none;
+            
+            @include media($small-desktop) {
+              display: inline-block;
+            }
+          }
+          
+          @include media($small-desktop) {
+            color: $colorSena;
+            font-size: 1em;
+            font-weight: 100;
+            line-height: 1.5em;
+            padding: 1.5em;
+            padding-left: 0.625em;
+            padding-right: 0.625em;
+          }
+        }
+
+        &:first-child {
+          width: 33%;
+          @include media($small-desktop) {
+            width:auto;
+          }
+        }
+        
+        &:nth-child(2) {
+          border-left: 1px solid #ccc;
+          border-right: 1px solid #ccc;
+          padding: 0 5px;
+          width: 33%;
+          @include media($small-desktop) {
+            border-left: none;
+            border-right: none;
+            padding: 0;
+            width: auto;
+          }
+        }
+
+        &:last-child {
+          width: 33%;
+          @include media($small-desktop) {
+            width:auto;
+          }
+        }
+
+        @include media($px1024) {
+          font-size: 0.775em;
+        }
+
+        @include media($px1144) {
+          font-size: 0.875em;
+        }
+
+        @include media($small-desktop) {
+          display: block;
+          /*font-size: 0.938em;*/
+          font-size: 0.7333em;
+          text-align: left;
+          position: static;
+          padding: 0;
+          top: auto;
+          @include transform(none);
+
+          a {
+            padding-left: 0.625em;
+            padding-right: 0.625em;
+            @include transition(all .22s ease-in-out);
+            
+            &:hover {
+              background: $colorQuin;
+              color: transparentize($colorLght,.5);
+              
+              i {
+                color: transparentize($colorLght,.5);
+              }
+            }
+          }
+
+          &:hover {
+            ul {
+              opacity: 1;
+              visibility: visible;
+            }
+          }
+
+          &.stay-hovered {
+            a {
+              background: $colorQuin;
+              color: transparentize($colorLght,.5);
+            }
+
+            .desktop-span-pipe {
+              display: none;
+            }
+          }
+        }
+
+        @include media($widescreen-desktop) {
+          font-size: 0.925em;
+        }
+      }
 
       @include media($small-desktop) {
         border-bottom: 0px solid #ccc;
@@ -219,130 +335,21 @@
           }
         }
       }
+    }
+  }
 
-      > li {
-        float: left;
-        position: relative;
-        text-align: center;
-        top: 50%;
-        @include transform(translateY(-50%));
+  .desktop-span-pipe {
+    display: none;
+  }
 
-        @include media($small-desktop) {
-          display: block;
-          font-size: 0.938em;
-          text-align: left;
-          position: static;
-          padding: 0;
-          top: auto;
-          @include transform(none);
-        }
-        
-        &:first-child {
-          width: 33%;
-          @include media($small-desktop) {
-            width:auto;
-          }
-        }
-        
-        &:nth-child(2) {
-          border-left: 1px solid #ccc;
-          border-right: 1px solid #ccc;
-          padding: 0 5px;
-          width: 33%;
-          @include media($small-desktop) {
-            border-left: none;
-            border-right: none;
-            padding: 0;
-            width: auto;
-          }
-        }
+  .nested-util {
+    @include media($small-desktop) {
+      left: 0;
+      width: calc(100% + 1.4em);
+    }
 
-        &:last-child {
-          width: 33%;
-          @include media($small-desktop) {
-            width:auto;
-          }
-        }
-
-        @include media($small-desktop) {
-          font-size: 0.7333em;
-        }
-
-        @include media($px1024) {
-          font-size: 0.775em;
-        }
-
-        @include media($px1144) {
-          font-size: 0.875em;
-        }
-
-        @include media($widescreen-desktop) {
-          font-size: 0.925em;
-        }
-
-        a {
-          bottom: 0;
-          color: $colorDark;
-          display: block;
-          font-size: em(12);
-          font-weight: bold;
-          height: 100%;
-          letter-spacing: -.05em;
-          line-height: em(22);
-          margin: -5px 0 0 0;
-          padding: 0;
-          vertical-align: bottom;
-
-          i {
-            display: none;
-            @include media($small-desktop) {
-              display: inline-block;
-            }
-          }
-          
-          @include media($small-desktop) {
-            color: $colorSena;
-            font-size: 1em;
-            font-weight: 100;
-            line-height: 1.5em;
-            padding: 1.5em;
-            padding-left: 0.625em;
-            padding-right: 0.625em;
-          }
-        }
-
-        @include media($small-desktop) {
-          &:hover {
-            ul {
-              opacity: 1;
-              visibility: visible;
-            }
-          }
-
-          &.stay-hovered {
-            a {
-              background: $colorQuin;
-              color: transparentize($colorLght,.5);
-            }
-            .desktop-span-pipe {
-              display: none;
-            }
-          }
-
-          a {
-            padding-left: 0.625em;
-            padding-right: 0.625em;
-            @include transition(all .22s ease-in-out);
-            &:hover {
-              background: $colorQuin;
-              color: transparentize($colorLght,.5);
-              i {
-                color: transparentize($colorLght,.5);
-              }
-            }
-          }
-        }
-      }
+    @include media($small-desktop-down) {
+      display: none;
     }
   }
 </style>

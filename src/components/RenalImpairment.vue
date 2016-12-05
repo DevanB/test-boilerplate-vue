@@ -3,9 +3,9 @@
 
 <script>
   export default {
-    name: 'DosingAdjustments'
+    name: 'RenalImpairment'
   }
 </script>
 
-<style>
+<style lang='scss' scoped>
 </style>

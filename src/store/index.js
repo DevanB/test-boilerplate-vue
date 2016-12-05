@@ -11,15 +11,52 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
+    currentStudy: 'motivate',
     headerHeight: 0,
     isiActive: false,
     isiSeen: false,
     navigationOpen: false,
+    openGroup: '',
     scrollPosition: 0,
-    windowHeight: 0,
-    windowWidth: 0
+    windowHeight: 649,
+    windowWidth: 1920
   },
   actions: {
+    setCurrentStudy ({ commit, state }, study) {
+      state.currentStudy === study ? '' : commit('SET_CURRENT_STUDY', study)
+    },
+    setOpenGroup ({ commit, state }, groupTitle) {
+      (state.openGroup === groupTitle) ? commit('SET_OPEN_NAVIGATION_GROUP', '') : commit('SET_OPEN_NAVIGATION_GROUP', groupTitle)
+    },
+    setWindowWidth ({ commit, state }) {
+      const windowWidth = document.documentElement.clientWidth
+      windowWidth === state.windowWidth ? '' : commit('SET_WINDOW_WIDTH', windowWidth)
+    },
+    setWindowHeight ({ commit, state }) {
+      const windowHeight = document.documentElement.clientHeight
+      windowHeight === state.windowHeight ? '' : commit('SET_WINDOW_HEIGHT', windowHeight)
+    },
+    setScrollPosition ({ commit, state }) {
+      const scrollableContentDiv = document.querySelector('.scrollable-content')
+      const top = (scrollableContentDiv.pageYOffset || scrollableContentDiv.scrollTop) - (scrollableContentDiv.clientTop || 0)
+      top === state.scrollPosition ? '' : commit('SET_SCROLL_POSITION', top)
+    },
+    toggleIsi ({ commit, state, getters }) {
+      if (getters.mobile) {
+        if (state.navigationOpen) {
+          commit('TOGGLE_NAVIGATION')
+        }
+        commit('TOGGLE_ISI')
+        if (!state.isiSeen) commit('TOGGLE_ISI_SEEN')
+        document.getElementById('sidebar').scrollTop = 0
+      }
+    },
+    toggleNavigation ({ commit, state }) {
+      commit('TOGGLE_NAVIGATION')
+      if (state.isiActive) {
+        commit('TOGGLE_ISI')
+      }
+    }
   },
   getters: {
     breakpoint: state => {
@@ -52,26 +89,35 @@ const store = new Vuex.Store({
     }
   },
   mutations: {
-    TOGGLE_ISI (state) {
-      state.isiActive = !state.isiActive
+    SET_CURRENT_STUDY (state, n) {
+      state.currentStudy = n
     },
-    toggleIsiSeen (state) {
-      state.isiSeen = !state.isiSeen || state.isiSeen
+    SET_ISI_CLOSED (state) {
+      state.isiActive = false
     },
-    TOGGLE_NAVIGATION (state) {
-      state.navigationOpen = !state.navigationOpen
+    SET_NAVIGATION_CLOSED (state) {
+      state.navigationOpen = false
+    },
+    SET_OPEN_NAVIGATION_GROUP (state, n) {
+      state.openGroup = n
     },
     SET_SCROLL_POSITION (state, n) {
       state.scrollPosition = n
     },
-    setWindowWidth (state, n) {
+    SET_WINDOW_WIDTH (state, n) {
       state.windowWidth = n
     },
-    setWindowHeight (state, n) {
+    SET_WINDOW_HEIGHT (state, n) {
       state.windowHeight = n
     },
-    setHeaderHeight (state, n) {
-      state.headerHeight = n
+    TOGGLE_ISI (state) {
+      state.isiActive = !state.isiActive
+    },
+    TOGGLE_ISI_SEEN (state) {
+      state.isiSeen = !state.isiSeen || state.isiSeen
+    },
+    TOGGLE_NAVIGATION (state) {
+      state.navigationOpen = !state.navigationOpen
     }
   }
 })

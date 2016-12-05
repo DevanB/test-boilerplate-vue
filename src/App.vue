@@ -1,11 +1,11 @@
 <template>
   <div>
+    <router-link to="/risks-and-side-effects#warnings-and-precautions">Click here to go to 'risks-and-side-effects#warnings-and-precautions'</router-link>
     <div class='wrap'>
       <div :class='scrollableContentClasses' @scroll='setScrollPosition'>
         <TopHeader/>
         <div class='main-column'>
           <div id='content'>
-            <section class='sub-menu-offset'></section>
             <router-view/>
           </div>
         </div>
@@ -18,63 +18,42 @@
 </template>
 
 <script>
-import BottomFooter from './components/BottomFooter'
-import TopHeader from './components/TopHeader'
-import MobileLandscapeMessage from './components/MobileLandscapeMessage'
-import ISI from './components/ISI'
+  import BottomFooter from './components/BottomFooter'
+  import TopHeader from './components/TopHeader'
+  import MobileLandscapeMessage from './components/MobileLandscapeMessage'
+  import ISI from './components/ISI'
+  import { mapActions, mapGetters, mapState } from 'vuex'
 
-import { mapGetters, mapState } from 'vuex'
-
-export default {
-  beforeDestroy () {
-    window.removeEventListener('resize', this.setWindowWidth)
-    window.removeEventListener('resize', this.setWindowHeight)
-  },
-  components: { BottomFooter, ISI, MobileLandscapeMessage, TopHeader },
-  computed: {
-    ...mapState([ 'isiActive', 'isiSeen', 'navigationOpen', 'windowHeight' ]),
-    ...mapGetters([ 'mobile' ]),
-    scrollableContentClasses () {
-      return {
-        'scrollable-content': true,
-        'lock-scroll': this.isiActive || this.navigationOpen
-      }
+  export default {
+    beforeDestroy () {
+      window.removeEventListener('resize', this.setWindowWidth)
+      window.removeEventListener('resize', this.setWindowHeight)
     },
-    mainColumHeight () {
-      if (this.mobile) {
+    components: { BottomFooter, ISI, MobileLandscapeMessage, TopHeader },
+    computed: {
+      ...mapState([ 'isiActive', 'isiSeen', 'navigationOpen', 'windowHeight' ]),
+      ...mapGetters([ 'mobile' ]),
+      scrollableContentClasses () {
         return {
-          marginTop: `165px`
+          'scrollable-content': true,
+          'lock-scroll': this.isiActive || this.navigationOpen
         }
       }
-      return
-    }
-  },
-  methods: {
-    setWindowWidth () {
-      const windowWidth = document.documentElement.clientWidth
-      this.$store.commit('setWindowWidth', windowWidth)
     },
-    setWindowHeight () {
-      const windowHeight = document.documentElement.clientHeight
-      this.$store.commit('setWindowHeight', windowHeight)
+    methods: {
+      ...mapActions([ 'setWindowWidth', 'setWindowHeight', 'setScrollPosition' ])
     },
-    setScrollPosition () {
-      const scrollableContentDiv = document.querySelector('.scrollable-content')
-      const top = (scrollableContentDiv.pageYOffset || scrollableContentDiv.scrollTop) - (scrollableContentDiv.clientTop || 0)
-      this.$store.commit('SET_SCROLL_POSITION', top)
-    }
-  },
-  mounted () {
-    this.$nextTick(() => {
-      window.addEventListener('resize', this.setWindowWidth)
-      window.addEventListener('resize', this.setWindowHeight)
+    mounted () {
+      this.$nextTick(() => {
+        window.addEventListener('resize', this.setWindowWidth)
+        window.addEventListener('resize', this.setWindowHeight)
 
-      this.setWindowWidth()
-      this.setWindowHeight()
-    })
-  },
-  name: 'App'
-}
+        this.setWindowWidth()
+        this.setWindowHeight()
+      })
+    },
+    name: 'App'
+  }
 </script>
 
 <style lang='scss'>
@@ -114,16 +93,6 @@ export default {
     @include media($small-desktop) {
       @include fill-parent;
       position: relative;
-    }
-    section.page-section{
-      width: 100%;
-      overflow: hidden;
-      @include media($small-desktop) {
-        width: 100%;
-      }
-      h2 {
-        line-height: 1.25 !important;
-      }
     }
   }
 

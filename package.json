@@ -15,9 +15,11 @@
   "dependencies": {
     "es6-promise": "^4.0.5",
     "font-awesome": "^4.7.0",
+    "ramda": "^0.22.1",
     "vue": "^2.0.1",
     "vue-router": "^2.0.2",
-    "vuex": "^2.0.0"
+    "vuex": "^2.0.0",
+    "vuex-router-sync": "^3.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

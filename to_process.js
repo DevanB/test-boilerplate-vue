@@ -31,17 +31,6 @@ if ($('.bar-util').length) {
     $('.bar-util > ul > li').eq(1).find('a').attr('href','https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#page38');
   }
 }
-//Group main menu sections to toggle open and closed
-$('.grouping > h3 > a').on('click.luckie', function(e){
-  e.preventDefault();
-  if( $(this).closest('.grouping').hasClass('clicked') ) {
-    //Close if already opened
-    $(this).closest('.grouping').toggleClass('clicked');  
-  } else {
-    $('.grouping').removeClass('clicked');
-    $(this).closest('.grouping').toggleClass('clicked');
-  }
-});
 $('.grouping ul a').on('click.luckie',function(e) {
   var href = $(this).attr('href');
   var hash = href.split('#')[1];
@@ -52,19 +41,6 @@ $('.grouping ul a').on('click.luckie',function(e) {
   $($selectHash).attr('selected', 'selected');
   $('select').trigger('change');
 });
-// @TODO: ISI
-//Add the ISI to the bottom of each page's content, just before prescribing callout
-if ($('.added-isi').length){} else {
-  var isiHtml = $('#sidebar').html();
-  $('.prescribing-callout').before("<div class='added-isi'></div>");
-  $('.added-isi').append(isiHtml);
-  //On Home, move Indications and usage section
-  if ($('.triumeq.hcp').length) {
-    var indicationsUsage = $('.added-isi .indications-usage').html();
-    $('.cta-section').before('<div class="added-indications"></div>');
-    $('.added-indications').append(indicationsUsage);
-  }
-}
 var headerHeight = $('.header-pad').outerHeight(true);
 //Mobile Sub-menu Select Jump Links
 $('select').on('change.luckie', function() {
@@ -81,11 +57,6 @@ $('select').on('change.luckie', function() {
   }
 });
 $('.navigation .menu-column:last-child').css('padding-bottom', $('#sidebar').outerHeight(true));
-// close menu on click even if on desired page
-$('.navigation ul a').on('click.luckie', function(e) {
-  $('#header').removeClass('show-nav');
-});
-
 //Setting min-height on all charts graphics
 $('img[data-width]').each(function(){
   var $this = $(this);
@@ -109,8 +80,6 @@ if (once) {
       $(this).attr('href',safariHref);
     })
   }
-  $('#header').after('<div class="header-off"></div>');
-  $('.header-off').css('height',$('#header').height() + 40).css('display','none');
 
   //Get each sections top position
   $('.page-section:not(".sub-menu")').each(function() {

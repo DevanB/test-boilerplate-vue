@@ -3,9 +3,9 @@
 
 <script>
   export default {
-    name: 'RenalImpairment'
+    name: 'MechanismOfAction'
   }
 </script>
 
-<style>
+<style lang='scss' scoped>
 </style>

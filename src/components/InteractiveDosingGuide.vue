@@ -3,9 +3,9 @@
 
 <script>
   export default {
-    name: 'MOAVideo'
+    name: 'InteractiveDosingGuide'
   }
 </script>
 
-<style>
+<style lang='scss' scoped>
 </style>

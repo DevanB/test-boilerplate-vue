@@ -1,91 +1,55 @@
 <template>
   <div id='sidebar' @click='toggleIsi' v-bind:class='isiClasses' v-bind:style='isiStyles'>
-    <i v-show='mobile' class='fa fa-angle-up isi-control'></i>
-    <div class='indications-usage'>
-      <h2>Indications and Usage:</h2>
-      <p>TRIUMEQ is indicated for the treatment of human immunodeficiency virus type 1 (HIV-1) infection.</p>
-      <p><b class='text-black'>Limitations of Use:</b></p>
+    <i v-show='mobile' class='fa fa-angle-up isi-control' :class='isiControlClasses'></i>
+    <div v-if='!this.mobile' class='indications-and-usage'>
+      <strong class="large">INDICATION AND USAGE</strong>
+      <p>SELZENTRY<sup>®</sup> (maraviroc) is indicated in combination with other antiretroviral agents for the treatment of only CCR5‑tropic human immunodeficiency virus type 1 (HIV‑1) infection in patients 2 years of age and older and weighing &geq;10 kg.</p>
+      <p><strong>Limitations of Use:</strong> SELZENTRY is not recommended in patients with dual/mixed- or CXCR4-tropic HIV-1</p>
+    </div>
+    <div class="important-information">
+      <span class='preview-content'>
+        <strong class="large">IMPORTANT SAFETY INFORMATION</strong>
+        <p>
+          <strong>
+          BOXED WARNING: Hepatotoxicity has been reported, which may be preceded by severe rash or other features of a systemic allergic reaction (eg, fever, eosinophilia, or elevated IgE). Immediately evaluate patients with signs or symptoms of hepatitis or allergic reaction.
+          </strong>
+        </p>
+      </span>
+    </div>
+    <span class='non-preview-content'>
+      <strong>CONTRAINDICATION</strong>
+      <p>SELZENTRY is contraindicated in patients with severe renal impairment (creatinine clearance [CrCl] &lt;30 mL/min) or end-stage renal disease (ESRD) who are taking potent cytochrome P450 (CYP) 3A inhibitors or inducers.</p>
+      <strong>ADDITIONAL WARNINGS AND PRECAUTIONS</strong>
+      <p><strong>Hepatotoxicity:</strong> Hepatotoxicity accompanied by severe rash or systemic allergic reaction, including life-threatening events, has been reported in clinical trials and postmarketing. These events occurred approximately 1 month after patients started treatment. Among reported cases of hepatitis, some were observed in the absence of allergic features or with no pre-existing hepatic disease.</p>
+      <p>Hepatic laboratory parameters, including alanine aminotransferase (ALT), aspartate aminotransferase (AST), and bilirubin should be obtained prior to starting SELZENTRY and at other time points during treatment as clinically indicated. Discontinuation of SELZENTRY should be considered in any patient with signs or symptoms of hepatitis, or with increased liver transaminases combined with rash or other systemic symptoms.</p>
+      <p>When administering SELZENTRY to patients with pre-existing liver dysfunction or who are coinfected with hepatitis B and/or C virus, additional monitoring may be warranted. The safety and efficacy of SELZENTRY have not been specifically studied in patients with significant underlying liver disorders.</p>
+      <p><strong>Severe Skin and Hypersensitivity Reactions:</strong> Severe, potentially life-threatening skin and hypersensitivity reactions have been reported in patients taking SELZENTRY, in most cases concomitantly with other drugs associated with these reactions. These include cases of Stevens-Johnson syndrome (SJS), toxic epidermal necrolysis (TEN), and drug rash with eosinophilia and systemic symptoms (DRESS). The cases were characterized by features including rash, constitutional findings, and sometimes organ dysfunction, including hepatic failure. Discontinue SELZENTRY and other suspected agents immediately if signs or symptoms of severe skin or hypersensitivity reactions develop. Delay in stopping treatment with SELZENTRY or other suspect drugs after the onset of rash may result in a life‐threatening reaction. Clinical status, including liver aminotransferases, should be monitored and appropriate therapy initiated.</p>
+      <p><strong>Cardiovascular Events:</strong> More cardiovascular events, including myocardial ischemia and/or infarction, were observed in treatment-experienced adult patients who received SELZENTRY compared to placebo. In treatment-naïve adult patients, the incidence of such events was lower with SELZENTRY than with efavirenz.</p>
+      <p>Patients with cardiovascular comorbidities, risk factors for postural hypotension, or receiving concomitant medication known to lower blood pressure, could be at increased risk of cardiovascular adverse events triggered by postural hypotension. Additional monitoring may be warranted. Patients should be advised that if they experience dizziness while receiving SELZENTRY, they should avoid driving or operating machinery.</p>
+      <p><strong>Postural Hypotension in Patients with Renal Impairment:</strong> SELZENTRY is contraindicated in patients with severe renal impairment (CrCl &lt;30 mL/min) or ESRD who are taking potent CYP3A inhibitors with or without a potent CYP3A inducer due to an increased risk of postural hypotension as a result of increased systemic exposure to SELZENTRY.</p>
+      <p>SELZENTRY should be used in patients with severe renal impairment or ESRD only if they are not receiving a concomitant potent CYP3A inhibitor or inducer and no alternative treatment options are available. If adult patients with severe renal impairment or ESRD, not receiving a concomitant potent CYP3A inhibitor or inducer, experience any symptoms of postural hypotension while taking SELZENTRY 300 mg twice daily, the dose should be reduced to 150 mg twice daily.</p>
+      <p><strong>Immune Reconstitution Syndrome</strong>, including the occurrence of autoimmune disorders with variable time to onset, has been reported.</p>
+      <p><strong>Potential Risk of Infection:</strong> SELZENTRY antagonizes the CCR5 coreceptor located on some immune cells, and therefore could potentially increase the risk of developing infections. Patients should be monitored closely for evidence of infection while receiving SELZENTRY.</p>
+      <p><strong>Potential Risk of Malignancy:</strong> While no increase in malignancy has been observed with SELZENTRY, due to this drug’s mechanism of action, it could affect immune surveillance and lead to an increased risk of malignancy. Long-term follow-up is needed to more fully assess this risk.</p>
+      <strong>ADVERSE REACTIONS:</strong>
       <ul>
-        <li>TRIUMEQ alone is not recommended in patients with:
-          <ul>
-            <li>Current or past history of resistance to any components of TRIUMEQ</li>
-            <li>Resistance-associated integrase substitutions or clinically suspected integrase strand transfer inhibitor (INSTI) resistance because the dose of dolutegravir in TRIUMEQ is insufficient in these subpopulations. See full prescribing information for dolutegravir</li>
-          </ul>
-        </li>
+        <li>The most common adverse events in treatment-experienced adult patients through 48 weeks (>8%) which occurred at a higher frequency compared with placebo were upper respiratory tract infections, cough, pyrexia, rash, and dizziness.</li>
+        <li>The most common adverse events in treatment-naїve adult patients through 96 weeks (>8%) which occurred at a higher frequency than the comparator arm were upper respiratory tract infections, bronchitis, flatulence, bloating and distention, upper respiratory tract signs and symptoms, and gastrointestinal atonic and hypomotility disorders.</li>
+        <li>The most common adverse reactions in treatment- experienced pediatric patients (≥3%) were vomiting, abdominal pain, diarrhea, nausea, and dizziness.</li>
       </ul>
-    </div>
-    <h2>Important Safety Information:</h2>
-    <div class='bold'>
-    <p>
-      <strong>
-        BOXED WARNING: HYPERSENSITIVITY REACTIONS, LACTIC ACIDOSIS AND SEVERE HEPATOMEGALY, and EXACERBATIONS OF HEPATITIS B VIRUS (HBV): 
-        <i v-if='mobile'><br/>See full Prescribing Information for complete boxed warning</i>
-      </strong>
-    </p>
-    <h3>Hypersensitivity Reactions:</h3>
-    <ul>
-      <li>Serious and sometimes fatal hypersensitivity reactions have occurred with abacavir-containing products</li>
-      <li>Hypersensitivity to abacavir is a multi-organ clinical syndrome</li>
-      <li>Patients who carry the <span class='inline-block'>HLA-B<sup class='asterisk'>*</sup>5701</span>allele are at a higher risk of experiencing a hypersensitivity reaction to abacavir; although, hypersensitivity reactions have occurred in patients who do not carry the <span class='inline-block'>HLA-B<sup class='asterisk'>*</sup>5701</span>allele</li>
-      <li>TRIUMEQ is contraindicated in patients with a prior hypersensitivity reaction to abacavir and in <span class='inline-block'>HLA-B<sup class='asterisk'>*</sup>5701-positive</span>patients. All patients should be screened for the <span class='inline-block'>HLA-B<sup class='asterisk'>*</sup>5701</span>allele prior to initiating therapy or reinitiation of therapy with TRIUMEQ, unless patients have a previously documented <span class='inline-block'>HLA-B<sup class='asterisk'>*</sup>5701</span> allele assessment</li>
-      <li>Discontinue TRIUMEQ as soon as hypersensitivity reaction is suspected. Regardless of <span class='inline-block'>HLA-B<sup class='asterisk'>*</sup>5701</span>status, permanently discontinue TRIUMEQ if hypersensitivity cannot be ruled out, even when other diagnoses are possible</li>
-      <li>Following a hypersensitivity reaction to TRIUMEQ, NEVER restart TRIUMEQ or any other abacavir-containing product</li>
-    </ul>
-    <h3>Lactic Acidosis and Severe Hepatomegaly with Steatosis:</h3>
-    <ul>
-      <li>Lactic acidosis and severe hepatomegaly with steatosis, including fatal cases, have been reported with the use of nucleoside analogues</li>
-    </ul>
-    <h3>Exacerbations of Hepatitis B:</h3>
-    <ul>
-      <li>Severe acute exacerbations of HBV have been reported in patients who are co-infected with HBV and HIV-1 and have discontinued lamivudine, a component of TRIUMEQ. Monitor hepatic function closely in these patients and, if appropriate, initiate anti-hepatitis B treatment</li>
-    </ul>
-    </div>
-    <h3>CONTRAINDICATIONS</h3>
-    <p>TRIUMEQ is contraindicated in patients:</p>
-    <ul>
-      <li>who have the  <span class='inline-block lineHeight'>HLA-B<sup class='asterisk lineHeight'>*</sup>5701</span> allele</li>
-      <li>with prior hypersensitivity reaction to abacavir, dolutegravir, or lamivudine</li>
-      <li>receiving dofetilide (antiarrhythmic)</li>
-      <li>with moderate or severe hepatic impairment</li>
-    </ul>
-    <h3>WARNINGS AND PRECAUTIONS</h3>
-    <h3>Hypersensitivity Reactions to Dolutegravir:</h3>
-    <ul>
-      <li>Hypersensitivity reactions have been reported and were characterized by rash, constitutional findings, and sometimes organ dysfunction, including liver injury. The events were reported in &lt;1% of subjects receiving <span class='inline-block'>TIVICAY<sup>&reg;</sup></span> in <span class='inline-block'>Phase 3</span> clinical trials </li>
-      <li>Clinically, it is not possible to determine whether a hypersensitivity reaction with TRIUMEQ would be caused by abacavir or dolutegravir. Discontinue TRIUMEQ and other suspect agents immediately if signs or symptoms of hypersensitivity reaction develop </li>
-    </ul>
-    <h3>Effects on Serum Liver Biochemistries in Patients with Hepatitis B or C Co-infection:</h3>
-    <ul>
-      <li>Patients with underlying hepatitis B or C may be at increased risk for worsening or development of transaminase elevations with use of TRIUMEQ. In some cases the elevations in transaminases were consistent with immune reconstitution syndrome or <span class='inline-block'>hepatitis B</span> reactivation, particularly in the setting where anti-hepatitis therapy was withdrawn</li>
-      <li>Appropriate laboratory testing prior to initiating therapy and monitoring for hepatotoxicity during therapy with TRIUMEQ are recommended in patients with underlying hepatic disease such as hepatitis B or C</li>
-    </ul>
-    <p><b>Use with Interferon- and Ribavirin-based Regimens:</b><br> Hepatic decompensation, some fatal, has occurred in HIV-1/hepatitis C virus (HCV) co-infected patients receiving combination antiretroviral therapy and interferon alfa with or without ribavirin. Patients receiving interferon alfa with or without ribavirin and TRIUMEQ should be closely monitored.</p>
-    <p><b>Immune Reconstitution Syndrome,</b> including the occurrence of autoimmune disorders with variable time to onset, has been reported.</p>
-
-    <p><b>Fat Redistribution</b> or accumulation has been observed in patients receiving antiretroviral therapy.</p>
-    <p><b>Myocardial Infarction (MI):</b></p>
-    <ul>
-      <li>An observational study showed an increase in MI with abacavir; a sponsor-conducted, pooled analysis did not show increased risk. In totality, the available data are inconclusive</li>
-      <li>The underlying risk of coronary heart disease should be considered when prescribing antiretroviral therapies, including abacavir, and action taken to minimize all modifiable risk factors (eg, hypertension, hyperlipidemia, diabetes mellitus, smoking)</li>
-    </ul>
-    <p><b>Use with Certain Antiretroviral Products:</b> <br>TRIUMEQ should not be administered concomitantly with other products containing abacavir or lamivudine.</p>
-    <h3>ADVERSE REACTIONS</h3>
-    <ul>
-      <li>The most commonly reported (&ge;2%) adverse reactions of at least moderate intensity in treatment-naïve adults receiving TRIUMEQ were insomnia (3%), headache (2%), and fatigue (2%)</li>
-    </ul>
-    <h3>DRUG INTERACTIONS</h3>
-    <ul>
-      <li>Coadministration of TRIUMEQ with certain inducers of UGT1A and/or CYP3A may reduce plasma concentrations of dolutegravir. Consult the full Prescribing Information for TRIUMEQ for more information</li>
-      <li>Administer TRIUMEQ 2 hours before or 6 hours after taking polyvalent cation-containing antacids or laxatives, sucralfate, oral supplements containing iron or calcium, or buffered medications. Alternatively, TRIUMEQ and supplements containing calcium or iron can be taken with food</li>
-    </ul>
-    <h3>USE IN SPECIFIC POPULATIONS</h3>
-    <ul>
-      <li><b class='purple'>Pregnancy Category C.</b> TRIUMEQ should be used during pregnancy only if the potential benefit justifies the potential risk. An Antiretroviral Pregnancy Registry has been established </li>
-      <li><b class='purple'>Nursing Mothers:</b> Breastfeeding is not recommended due to the potential for HIV transmission and the potential for adverse reactions in nursing infants</li>
-      <li><b class='purple'>Patients with Impaired Renal Function:</b> TRIUMEQ is not recommended in patients with creatinine clearance &lt;50 mL/min</li>
-      <li><b class='purple'>Patients with Impaired Hepatic Function:</b> If a dose reduction of abacavir, a component of TRIUMEQ, is required for patients with mild hepatic impairment, then the individual components should be used </li>
-    </ul>
-    <p class='prescribing-information'><b>Please see full <a href='https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Triumeq/pdf/TRIUMEQ-PI-MG.PDF#1' target='_blank' class='pink'>Prescribing Information</a>, including Boxed Warning and Medication Guide, for TRIUMEQ.</b></p>
+      <strong>DRUG INTERACTIONS</strong>
+      <p>SELZENTRY is a substrate of CYP3A and P-glycoprotein (P-gp). Coadministration with potent CYP3A inhibitors, including delavirdine or protease inhibitors (except tipranavir/ritonavir), will increase the concentration of SELZENTRY. Coadministration with potent CYP3A inducers, including efavirenz, may decrease the concentration of SELZENTRY. Healthcare providers should ensure that an appropriate dose adjustment of SELZENTRY is made when SELZENTRY is coadministered with potent CYP3A inhibitors and/or potent CYP3A inducers since concentrations, therapeutic effects, and the safety of SELZENTRY may be affected.</p>
+      <p>Concomitant use of SELZENTRY and St. John's wort (<i>Hypericum perforatum</i>) or products containing St. John's wort is not recommended.</p>
+      <p>SELZENTRY is not recommended in pediatric patients 2 years of age or older and weighing ≥10 kg receiving potent CYP3A inducers without a potent CYP3A inhibitor. Additionally, there are insufficient data to make a dosing recommendation for use of SELZENTRY in pediatric patients concomitantly receiving non-interacting medications and weighing &lt;30 kg.</p>
+      <strong>USE IN SPECIFIC PATIENT POPULATIONS</strong>
+      <p><strong>Pregnancy: </strong>The Antiretroviral Pregnancy Registry monitors outcomes in women exposed to SELZENTRY during pregnancy. The limited data available on the use of SELZENTRY during pregnancy are not sufficient to assess any potential drug‐associated risk of birth defects and miscarriage.</p>
+      <p><strong>Lactation: </strong>Breastfeeding is not recommended due to the potential for HIV transmission and the potential for serious adverse reactions in nursing infants.</p>
+      <p><strong>Pediatric Patients: </strong>SELZENTRY is not recommended in patients younger than 2 years of age because the pharmacokinetics, safety, and efficacy of this drug have not been established in this patient population.</p>
+      <p><strong>Renal Impairment in Pediatric Patients: </strong>There are no data to recommend specific doses of SELZENTRY in pediatric patients with mild to moderate renal impairment.</p>
+      <p><strong>Hepatic Impairment: </strong>SELZENTRY is principally metabolized by the liver. Therefore, concentrations of SELZENTRY may be increased in patients with hepatic impairment. SELZENTRY has not been studied in patients with severe hepatic impairment or in pediatric patients with any degree of hepatic impairment.</p>
+      <p><strong>HOW SUPPLIED:</strong> SELZENTRY is available in 25‐mg, 75‐mg, 150‐mg, and 300‐mg tablets, and a 20‐mg/mL oral solution.</p>
+      <p class="prescribing-information"><strong>Please see full <a href="https://www.gsksource.com/pharma/content/dam/GlaxoSmithKline/US/en/Prescribing_Information/Selzentry/pdf/SELZENTRY-PI-MG-IFU.PDF" target="_blank">Prescribing Information</a>, including Boxed Warning and Medication Guide, for SELZENTRY.</strong></p>
+    </span>
   </div>
 </template>
 
@@ -114,6 +78,11 @@ export default {
         }
       }
       return
+    },
+    isiControlClasses () {
+      return {
+        active: this.isiActive
+      }
     }
   },
   methods: {
@@ -127,8 +96,8 @@ export default {
   @import '../scss/main.scss';
 
   .isiNotSeenHeight {
-    height: 66px !important;
-    min-height: 66px !important;
+    height: 83px !important;
+    min-height: 83px !important;
   }
 
   .isiSeenHeight {
@@ -140,8 +109,7 @@ export default {
     background: $white;
     bottom: 0;
     font-family: $ag-book;
-    font-size: 78.5%;
-    height: 75px;
+    height: 100%;
     line-height: 1.5em;;
     padding: 10px;
     position: fixed;
@@ -149,9 +117,6 @@ export default {
     -webkit-transform: translate3d(0, 0, 0);
     width: 100%;
     z-index: 1000;
-    a {
-      color: $colorQuin;
-    }
     h2 {
       font-size: 1em;
       font-family: $ag-demi;
@@ -162,7 +127,7 @@ export default {
     }
     h3 {
       @extend %p;
-      color: $colorQuin;
+      /*color: $colorQuin;*/
       font-family: $ag-demi;
       line-height: 14px;
       font-size: 1.1em;
@@ -175,7 +140,7 @@ export default {
       &:before {
         content: '• ';
         font-weight: 100;
-        color: $colorQuin;
+        /*color: $colorQuin;*/
         position: absolute;
         left: -1em;
         font-size: 1rem;
@@ -213,16 +178,11 @@ export default {
     .inline-block {
       line-height: 0;
     }
-    .pink {
-      color: $colorSena;
-      font-weight: 900;
-    }
     @include media($small-desktop) {
       background-color: $colorLght;
       bottom: 0;
       box-shadow: 0 0 1em 0 transparentize($colorDark,.5);
       display: block;
-      font-size: 85%;
       height: auto;
       overflow-y: scroll;
       padding: 20px;
@@ -261,17 +221,12 @@ export default {
     }
   }
 
-  #sidebar, .added-isi, .added-indications {
-    height: 100%;
-    font-size: 0.8rem;
+  #sidebar {
     padding: 5px 20px 20px 20px;
     z-index: 20000;
-    a {
-      color: $colorQuin;
-    }
     h2 {
       @extend %h3;
-      color: $colorQuin;
+      /*color: $colorQuin;*/
       font-weight: 500;
       font-family: $ag-demi;
       font-size: 1.3em;
@@ -279,7 +234,7 @@ export default {
     }
     h3 {
       @extend %p;
-      color: $colorQuin;
+      /*color: $colorQuin;*/
     }
     li {
       position: relative;
@@ -288,7 +243,7 @@ export default {
       &:before {
         content: '• ';
         font-weight: 500;
-        color: $colorQuin;
+        /*color: $colorQuin;*/
         position: absolute;
         left: -1em;
         font-size: 1rem;
@@ -302,7 +257,7 @@ export default {
       }
     }
     p b {
-      color: $colorQuin;
+      /*color: $colorQuin;*/
       font-family: $ag-demi;
       font-size: 1.1em;
       font-weight: 700;
@@ -320,9 +275,6 @@ export default {
         font-family: $ag-demi;
       }
     }
-    .purple {
-      color: $colorQuin;
-    }
     @include media($small-desktop) {
       padding: 20px 10px 20px 10px;
       overflow: auto;
@@ -335,58 +287,6 @@ export default {
     margin-top: 1em;
   }
 
-  .added-isi {
-    padding: 15px 0;
-    padding: 15px;
-    li {
-      list-style: none;
-      position: relative;
-      font-weight: 100;
-      line-height: 1.5em;
-      margin: 0;
-      left: -1em;
-      &:before {
-        content: '• ';
-        font-weight: 600;
-        color: $colorQuin;
-        position: absolute;
-        left: -0.75em;
-        font-size: 1rem;
-      }
-    }
-    .indications-usage {
-      display: none;
-    }
-    .inline-block {
-      line-height: 0;
-    }
-    .prescribing-information {
-      display: none;
-    }
-    p {
-      padding: 0;
-      line-height: 1.5em;
-    }
-    @include media($small-desktop) {
-      padding: 20px;
-      display: none;
-    }
-    @include media($small-desktop-down) {
-      .isi-control {
-        display: none;
-      }
-      h2 {
-        font-size: em(22);
-      }
-      h3 {
-        font-size: em(18);
-      }
-      ul {
-        list-style-type: disc;
-      }
-    }
-  }
-
   .isi-control {
     cursor: pointer;
     font-size: em(28);
@@ -396,31 +296,5 @@ export default {
 
     @include transform(rotate(360deg));
     @include transition-duration(0.45s);
-  }
-
-  .added-indications {
-    li {
-      list-style: none;
-      position: relative;
-      font-weight: 100;
-      line-height: 1.5em;
-      margin: 0;
-      left: -0.9em;
-      &:before {
-        content: '• ';
-        font-weight: 600;
-        color: $colorQuin;
-        position: absolute;
-        left: -0.75em;
-        font-size: 1.3em;
-      }
-    }
-    p b {
-      color: $colorDark;
-    }
-    padding-bottom: 0;
-    @include media($small-desktop) {
-      display: none;
-    }
   }
 </style>

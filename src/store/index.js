@@ -18,6 +18,7 @@ const store = new Vuex.Store({
     navigationOpen: false,
     openGroup: '',
     scrollPosition: 0,
+    scrollSection: 0,
     windowHeight: 649,
     windowWidth: 1920
   },
@@ -28,6 +29,14 @@ const store = new Vuex.Store({
     setOpenGroup ({ commit, state }, groupTitle) {
       (state.openGroup === groupTitle) ? commit('SET_OPEN_NAVIGATION_GROUP', '') : commit('SET_OPEN_NAVIGATION_GROUP', groupTitle)
     },
+    setScrollPosition ({ commit, state }) {
+      const scrollableContentDiv = document.querySelector('.scrollable-content')
+      const top = (scrollableContentDiv.pageYOffset || scrollableContentDiv.scrollTop) - (scrollableContentDiv.clientTop || 0)
+      top === state.scrollPosition ? '' : commit('SET_SCROLL_POSITION', top)
+    },
+    setScrollSection ({ commit }, section) {
+      commit('SET_SCROLL_SECTION', section)
+    },
     setWindowWidth ({ commit, state }) {
       const windowWidth = document.documentElement.clientWidth
       windowWidth === state.windowWidth ? '' : commit('SET_WINDOW_WIDTH', windowWidth)
@@ -35,11 +44,6 @@ const store = new Vuex.Store({
     setWindowHeight ({ commit, state }) {
       const windowHeight = document.documentElement.clientHeight
       windowHeight === state.windowHeight ? '' : commit('SET_WINDOW_HEIGHT', windowHeight)
-    },
-    setScrollPosition ({ commit, state }) {
-      const scrollableContentDiv = document.querySelector('.scrollable-content')
-      const top = (scrollableContentDiv.pageYOffset || scrollableContentDiv.scrollTop) - (scrollableContentDiv.clientTop || 0)
-      top === state.scrollPosition ? '' : commit('SET_SCROLL_POSITION', top)
     },
     toggleIsi ({ commit, state, getters }) {
       if (getters.mobile) {
@@ -103,6 +107,9 @@ const store = new Vuex.Store({
     },
     SET_SCROLL_POSITION (state, n) {
       state.scrollPosition = n
+    },
+    SET_SCROLL_SECTION (state, n) {
+      state.scrollSection = n
     },
     SET_WINDOW_WIDTH (state, n) {
       state.windowWidth = n

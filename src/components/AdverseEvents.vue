@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div id='adverse-events' class='container'>
     <StudySwitcher :merit='true' :motivate='true' :pediatric='true'/>
     <br/>
     <transition name='fade' mode='out-in'>
@@ -37,5 +37,9 @@
   }
   .fade-enter, .fade-leave-active {
     opacity: 0;
+  }
+
+  #adverse-events {
+    @include linear-gradient(to top, $white 0%, $brand-light-gray 30%, $fallback: $brand-light-gray);
   }
 </style>

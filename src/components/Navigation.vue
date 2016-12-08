@@ -65,7 +65,7 @@
                       links.length - 1 === index ? (
                         <div class='newLogo' v-show={ !this.mobile }>
                           <router-link to='/' title='Selzentry HCP'>
-                            <img src='/static/images/logo-triumeq-hcp.png' alt='Selzentry HCP'/>
+                            <img src='/static/images/logo-selzentry-white.svg' alt='Selzentry HCP'/>
                           </router-link>
                         </div>
                         ) : ''
@@ -85,7 +85,7 @@
   @import '../scss/main';
 
   .navigation {
-    background: $colorBG;
+    background: $brand-navy;
     height: 100vh;
     left: 0;
     overflow-x: scroll;
@@ -141,7 +141,7 @@
     }
 
     h3 {
-      color: $colorTert;
+      color: $brand-secondary;
       display: block;
       font-size: em(18);
       font-weight: 500;
@@ -150,7 +150,7 @@
       text-transform: uppercase;
 
       a {
-        color: $colorTert;
+        color: $brand-secondary;
         display: block;
       }
 
@@ -166,7 +166,7 @@
     }
 
     li {
-      color: $colorQuin;
+      color: $brand-secondary;
       font-size: 1.12375rem;
       padding: 0.79625rem 1rem 0.79625rem 0.79625rem;
       position: relative;
@@ -180,7 +180,7 @@
       }
 
       i {
-        color: $colorQuin;
+        color: $brand-secondary;
         font-size: 2rem;
         float: right;
         margin-left: 5px;
@@ -204,7 +204,7 @@
       }
       
       &:last-child {
-        border-bottom: 1px solid $colorBG;
+        border-bottom: 1px solid $brand-secondary;
         padding-bottom: 1rem;
       }
     }
@@ -215,7 +215,8 @@
     }
 
     ul:last-child li:last-child {
-      border-bottom: 0;
+      /*border-bottom: 0;*/
+      border-bottom: 1px solid $brand-primary;
     }
 
     @include media($tablet-portrait) {
@@ -223,6 +224,15 @@
     }
 
     @include media($small-desktop) {
+      top: 47px;
+      width: 90%;
+
+      nav {
+        padding-bottom: inherit;
+      }
+    }
+
+    @include media($widescreen-desktop) {
       top: 61px;
       width: 90%;
 

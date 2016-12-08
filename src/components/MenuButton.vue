@@ -40,7 +40,7 @@
     z-index: 12;
 
     &:before {
-      color: $colorTert;
+      color: $brand-secondary;
       content: 'MENU';
       font-size: 80%;
       font-weight: bold;
@@ -56,7 +56,7 @@
     }
     
     span {
-      background: $colorQuin;
+      background: $brand-secondary;
       display: block;
       height: 0.25em;
       margin: 0 auto 0.4375em;
@@ -83,6 +83,14 @@
 
   .active {
     cursor: pointer;
+
+    &:before {
+      display: none;
+    }
+
+    span {
+      background: $brand-primary;
+    }
     
     span:first-child {
       @include transform(translateY(11px) rotate(45deg));
@@ -112,5 +120,5 @@
       position: relative;
       top: 0;
     }
-    }
+  }
 </style>

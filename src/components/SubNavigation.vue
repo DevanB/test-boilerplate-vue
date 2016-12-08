@@ -1,15 +1,16 @@
 <script>
-  import { mapGetters, mapState } from 'vuex'
+  import { mapActions, mapGetters, mapState } from 'vuex'
   import { getChildLinks, links } from '../links'
 
   export default {
     computed: {
       ...mapGetters([ 'minimal', 'mobile' ]),
-      ...mapState([ 'navigationOpen', 'route' ]),
+      ...mapState([ 'navigationOpen', 'route', 'scrollSection' ]),
       sectionClasses () {
         return {
           'page-section': true,
           'sub-menu': true,
+          container: true,
           fixed: this.minimal
         }
       }
@@ -19,17 +20,21 @@
         links
       }
     },
+    methods: {
+      ...mapActions([ 'setScrollSection' ])
+    },
     render (h) {
       const { name } = this.route
-      if (name !== 'Home' && name !== '404') {
+      const { shortName } = this.$route.meta
+      if (shortName !== 'home' && shortName !== '404' && shortName !== 'about') {
         return (
-          <section id={ `${this.$route.meta.shortName}-menu` } class={ this.sectionClasses }>
+          <section id={ `${shortName}-menu` } class={ this.sectionClasses }>
             <h1 v-show={ !this.mobile }>{ name }</h1>
             <div class='wrap-fixed-width'>
               <ul class='nav'>
                 {
                   getChildLinks(name).map((link, index) => (
-                    <router-link to={ `${this.route.path}${link.url}` } tag="li"><a>{ link.title }</a></router-link>
+                    <li class={ this.scrollSection === index ? 'active' : '' }><a onClick={ () => this.setScrollSection(index) }>{ link.title }</a></li>
                   ))
                 }
               </ul>
@@ -56,16 +61,16 @@
   @import '../scss/main';
 
   .sub-menu {
-    background: $colorTert;
+    /*background: $colorTert;
     margin-bottom: 0;
     opacity: 1;
     padding: 10px;
     padding: 1em 0;
     visibility: visible;
     width: 100%;
-    @include transition(0.25s opacity);
+    @include transition(0.25s opacity);*/
 
-    div.fixed {
+    &.fixed {
       height: 4.25em;
       left: 0;
       margin: 0;
@@ -106,6 +111,17 @@
       }
     }
 
+    ul.nav {
+      /*float: right;*/
+      /*margin: 0;*/
+      /*position: relative;*/
+
+      @include media($small-desktop) {
+        /*@include span-columns(9 of 12);*/
+        /*@include shift(3 of 12);*/
+      }
+    }
+
     div.select:after {
       box-sizing: border-box;
       color: $colorSena;
@@ -124,7 +140,7 @@
     }
 
     a {
-      color: $colorTert;
+      color: $brand-secondary;
       font-weight: 100;
       position: relative;
       top: -1.375em;
@@ -134,7 +150,7 @@
       @include transition(.22s all ease-in-out);
 
       &:before {
-        background-color: $colorTert;
+        background-color: $brand-secondary;
         box-sizing: content-box;
         content: ' ';
         height: .125em;
@@ -181,12 +197,13 @@
     }
 
     h1 {
-      border: none;
-      color: $colorTert;
+      color: $brand-primary;
+      font-size: 2em;
+      font-weight: 100;
+      
+      /*
       float: left;
       font-family: $ag-book;
-      font-size: em(10);
-      font-weight: 100;
       height: auto;
       margin-bottom: 0;
       margin-top: 5px;
@@ -209,7 +226,7 @@
         padding-right: 0;
         position: relative;
         top: auto;
-      }
+      }*/
     }
 
     li {
@@ -220,11 +237,11 @@
       top: 0;
 
       &.active a {
-        color: $colorTert;
+        color: $brand-navy;
         font-weight: bold;
 
         &:before {
-          background-color: $colorTert;
+          background-color: $brand-secondary;
           @include transform(scale(1,1));
         }
       }
@@ -249,26 +266,15 @@
       @include transform(translateY(-50%));
     }
 
-    ul {
-      float: right;
-      margin: 0;
-      position: relative;
-
-      @include media($small-desktop) {
-        @include span-columns(9 of 12);
-        @include shift(3 of 12);
-      }
-    }
-
     @include media($small-desktop) {
-      background: none;
+      /*background: none;
       margin-bottom: -4px;
       padding: 2em 0 1.5em;
       padding-bottom: 1em;
       padding-top: 1em;
       width: 84.55%;
       @include shift(1 of 14);
-      @include span-columns(12 of 14);
+      @include span-columns(12 of 14);*/
     }
   }
 </style>

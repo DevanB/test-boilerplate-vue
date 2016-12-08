@@ -1,27 +1,26 @@
 <template>
   <header id='header' :class='headerClasses'>
-    <div class='header-pad'>
+    <div class='header-pad container'>
       <UtilityLinks/>
       <div class='menu-home-button' v-show='!navigationOpen'>
         <router-link to='/'><img class='home-icon' src='/static/images/home-button.svg' width='100%' alt='Home'></router-link>
       </div>
-      <Navigation v-bind:columns='3'/>
+      <Navigation :columns='3'/>
       <div class='logo'>
-        <router-link to='/' title='Selzentry HCP'><img src='/static/images/logo-triumeq-hcp.png' id='mobileImg' alt='Selzentry HCP'/></router-link>
+        <router-link to='/' title='Selzentry HCP'><img src='/static/images/logo-selzentry.svg' id='mobileImg' alt='Selzentry HCP'/></router-link>
       </div>
-      <SubNavigation/>
     </div>
   </header>
 </template>
 
 <script>
   import Navigation from './Navigation'
-  import SubNavigation from './SubNavigation'
+  
   import UtilityLinks from './UtilityLinks'
   import { mapGetters, mapState } from 'vuex'
 
   export default {
-    components: { Navigation, SubNavigation, UtilityLinks },
+    components: { Navigation, UtilityLinks },
     computed: {
       ...mapState([ 'navigationOpen' ]),
       ...mapGetters([ 'minimal' ]),
@@ -40,15 +39,14 @@
   @import '../scss/main';
 
   header {
-    background: $white;
     padding: 0;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    @include linear-gradient(to top, $brand-light-gray 0%, $white 20%, $white 21%, $fallback: $brand-light-gray);
 
-    &:after {
-      background: $colorBG;
+    /*&:after {
       height: 100%;
       position: absolute;
       right: -1em;
@@ -59,24 +57,18 @@
       @include media($small-desktop) {
         background: none;
       }
-    }
+    }*/
 
     @include media($small-desktop) {
-      background: none;
       position: relative;
     }
   }
 
   .header-pad {
     height: 155px;
-    padding: 0 10px;
 
     @include media($tablet-portrait) {
       height: 195px;
-    }
-    
-    @include media($small-desktop) {
-      padding: 0 1.125em 0 1.4375em;
     }
   }
 

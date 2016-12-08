@@ -1,6 +1,7 @@
 <template>
   <footer id='footer' v-bind:class='footerStyles'>
     <div class='inset'>
+      <hr>
       <p>
         You are encouraged to report negative side effects of prescription drugs to the FDA.<br>
         Visit <a class='modal' href='http://www.fda.gov/medwatch'>www.fda.gov/medwatch</a>, or call 1-800-FDA-1088.
@@ -12,10 +13,9 @@
         <li><a href='https://www.contactus.gsk.com/callback/index.html' target='_blank'><img src='/static/images/viiv-request-sales-professional.png' alt=''></a></li>
       </ul>
       <p>
-        TRIUMEQ and TIVICAY are registered trademarks of the ViiV Healthcare group of companies.
-        <br>The other brands listed are trademarks of their respective owners and are not trademarks of the ViiV Healthcare group of companies. <br>The makers of these brands are not affiliated with and do not endorse the ViiV Healthcare group of companies or its products. <br>
-        This Web site is funded and developed <br class='mobile-break'>by ViiV Healthcare. <br>
-        <span>This site is intended for US healthcare <br class='mobile-break'>professionals only. <br>
+        SELZENTRY is a registered trademarks of the ViiV Healthcare group of companies.<br>
+        This Web site is funded and developed <br class='mobile-break'>by ViiV Healthcare.<br>
+        <span>This site is intended for US healthcare <br class='mobile-break'>professionals only.<br>
         ©2016 ViiV Healthcare group of companies. <br class='mobile-break'>All rights reserved.</span>
       </p>
     </div>
@@ -65,7 +65,6 @@
 
   #footer {
     clear: both;
-    color: $colorDark;
     text-align: center;
     width:100%;
 
@@ -84,38 +83,38 @@
       }
 
       a {
-        color: $colorQuin;
-        @include transition(all .22s ease-in-out);
-        &:hover {
-          color: $colorDark;
-        }
+        color: $brand-secondary;
       }
 
       h3 {
         font-size: 1.125em;
+
         @include media($small-desktop) {
           font-size: 1.5em;
+
           .keep-inline {
             display: inline-block;
             position: relative;
+
             sup {
               left: auto;
               position: absolute;
               right: -.333em;
             }
           }
-          
         }
       }
 
       p {
+        font-size:90%;
+
         a {
-          color: $colorTert;
+          color: $brand-secondary;
           text-decoration: underline;
         }
-        font-size:90%;
+        
         @include media($small-desktop) {
-          font-size:85%;
+          font-size: 85%;
           line-height: 1.35;
         }
       }
@@ -125,7 +124,6 @@
       }
 
       @include media($small-desktop) {
-        /*padding: 0;*/
         @include span-columns(12 of 14);
         @include shift(1 of 14);
       }
@@ -137,77 +135,102 @@
       padding: 0;
       position: relative;
       width: 100%;
+
       li {
         &:nth-child(1) {
+          padding-bottom: 2em;
           @include span-columns(4 of 12);
           @include shift(4);
-          padding-bottom: 2em;
         }
+
         &:nth-child(3){
-          @include span-columns(8 of 12);
-          @include shift(2);
+          padding-bottom: 2em;
           padding-top: 2em;
-          padding-bottom: 2em;
-        }
-        &:nth-child(4) {
           @include span-columns(8 of 12);
           @include shift(2);
-          padding-bottom: 2em;
         }
-        @include media($small-desktop)
-        {
-          position: relative;
+
+        &:nth-child(4) {
+          padding-bottom: 2em;
+          @include span-columns(8 of 12);
+          @include shift(2);
+        }
+
+        @include media($small-desktop) {
           display: inline;
-          top: 3em;
           margin-bottom: 3em;
+          position: relative;
+          top: 3em;
+
           &:nth-child(1) {
+            padding-bottom: 0;
             @include span-columns(1.5 of 12);
             @include omega;
             @include shift(0);
-            padding-bottom: 0;
           }
+
           &:nth-child(2) {
+            margin-right: 0%;
             @include span-columns(5.12 of 12);
             @include omega;
-            margin-right: 0%;
+            
             img {
               padding: 0 1em;
             }
-
           }
+
           &:nth-child(3) {
+            margin-right: 1%;
+            padding-bottom: 0;
+            padding-top: 0;
             @include span-columns(2.95 of 12);
             @include omega;
             @include shift(0);
-            padding-top: 0;
-            padding-bottom: 0;
-            margin-right: 1%;
           }
+
           &:nth-child(4) {
-            @include span-columns(2.48 of 12);
-            @include omega;
             display: block;
             margin-left: 0;
+            @include span-columns(2.48 of 12);
+            @include omega;
           }
         }
+
         a {
           display: block;
         }
+        
         img {
-          width: 100%;
           display: block;
+          width: 100%;
         }
       }
     }
+
     .footer-menu {
-      background-color: $colorQuin;
-      color: $colorLght;
-      @include media($small-desktop) {
+      background-color: $brand-navy;
+      color: $white;
+
+      a {
+        color: $white;
+        padding: 1em;
         display: inline-block;
-        width: 100%;
-        @include pad(0 default 0 0);
-        box-sizing: content-box;
       }
+      
+      li {
+        display: block;
+        @include media($small-desktop) {
+          display: inline-block;
+        }
+      }
+      
+      span {
+        display: none;
+        @include media($small-desktop) {
+          display:inline;
+        }
+      }
+      
       ul {
         margin: 0;
         padding: 1em 0;
@@ -215,36 +238,15 @@
           padding: 0;
         }
       }
-      li {
-        display: block;
-        @include media($small-desktop) {
-          display: inline-block;
-        }
-      }
-      span {
-        display: none;
-        @include media($small-desktop) {
-          display:inline;
-        }
-      }
-      a {
-        color: $colorLght;
-        padding: 1em;
+
+      @include media($small-desktop) {
         display: inline-block;
+        width: 100%;
+        @include pad(0 default 0 0);
+        box-sizing: content-box;
       }
     }
-    .smaller-text {
-      @include media($small-desktop) {
-        font-size: 90%;
-        line-height: 1.35;
-      }
-    }
-    .mobile-hide {
-      display: none;
-      @include media($small-desktop) {
-        display: inline;
-      }
-    }
+    
     .mobile-break {
       @include media($small-desktop) {
         display: none;

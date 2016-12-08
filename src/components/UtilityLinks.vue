@@ -65,7 +65,7 @@
     text-align: center;
 
     @include media($small-desktop) {
-      color: $colorTert;
+      /*color: $colorTert;*/
       display: inline-block;
       float: left;
       font-family: $open-sans;
@@ -101,7 +101,7 @@
       display: inline-block;
 
       a {
-        color: $colorQuin;
+        color: $brand-secondary;
         display: block;
         padding: 1.5em 0;
       }
@@ -145,7 +145,7 @@
         
         a {
           bottom: 0;
-          color: $colorDark;
+          /*color: $colorDark;*/
           display: block;
           font-size: em(12);
           font-weight: bold;
@@ -165,7 +165,7 @@
           }
           
           @include media($small-desktop) {
-            color: $colorSena;
+            /*color: $colorSena;*/
             font-size: 1em;
             font-weight: 100;
             line-height: 1.5em;
@@ -226,11 +226,11 @@
             @include transition(all .22s ease-in-out);
             
             &:hover {
-              background: $colorQuin;
-              color: transparentize($colorLght,.5);
+              background: $brand-secondary;
+              color: $white;
               
               i {
-                color: transparentize($colorLght,.5);
+                color: $white;
               }
             }
           }
@@ -244,8 +244,8 @@
 
           &.stay-hovered {
             a {
-              background: $colorQuin;
-              color: transparentize($colorLght,.5);
+              background: $brand-secondary;
+              color: $white;
             }
 
             .desktop-span-pipe {
@@ -270,12 +270,12 @@
         position: relative;
 
         i {
-          color: $colorQuin;
+          color: $brand-secondary;
           @include transition(all .5s ease-in-out);
         }
 
         ul {
-          background: $colorQuin;
+          background: $brand-secondary;
           box-shadow: 0 3px 3px 0 transparentize($colorDark,.5);
           display: block;
           margin: 0;

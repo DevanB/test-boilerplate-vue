@@ -1,5 +1,5 @@
 <template>
-  <div id="laboratory-abnormalities">
+  <div id='laboratory-abnormalities'>
     <StudySwitcher :merit='true' :motivate='true' :pediatric='true'/>
     <br/>
     <transition name='fade' mode='out-in'>
@@ -37,5 +37,9 @@
   }
   .fade-enter, .fade-leave-active {
     opacity: 0;
+  }
+
+  #laboratory-abnormalities {
+    @include linear-gradient($brand-light-gray, $white)
   }
 </style>

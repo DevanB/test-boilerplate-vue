@@ -1,9 +1,9 @@
 <template>
   <div>
-    <router-link to="/risks-and-side-effects#warnings-and-precautions">Click here to go to 'risks-and-side-effects#warnings-and-precautions'</router-link>
     <div class='wrap'>
       <div :class='scrollableContentClasses' @scroll='setScrollPosition'>
         <TopHeader/>
+        <SubNavigation/>
         <div class='main-column'>
           <div id='content'>
             <router-view/>
@@ -19,9 +19,10 @@
 
 <script>
   import BottomFooter from './components/BottomFooter'
-  import TopHeader from './components/TopHeader'
-  import MobileLandscapeMessage from './components/MobileLandscapeMessage'
   import ISI from './components/ISI'
+  import MobileLandscapeMessage from './components/MobileLandscapeMessage'
+  import SubNavigation from './components/SubNavigation'
+  import TopHeader from './components/TopHeader'
   import { mapActions, mapGetters, mapState } from 'vuex'
 
   export default {
@@ -29,7 +30,7 @@
       window.removeEventListener('resize', this.setWindowWidth)
       window.removeEventListener('resize', this.setWindowHeight)
     },
-    components: { BottomFooter, ISI, MobileLandscapeMessage, TopHeader },
+    components: { BottomFooter, ISI, MobileLandscapeMessage, SubNavigation, TopHeader },
     computed: {
       ...mapState([ 'isiActive', 'isiSeen', 'navigationOpen', 'windowHeight' ]),
       ...mapGetters([ 'mobile' ]),
@@ -66,7 +67,7 @@
 
   body {
     font-family: $open-sans;
-    background: $colorBG;
+    background: $white;
   }
 
   .body-int-bg-wrap {
@@ -87,7 +88,7 @@
     width: 100%;
     float: left;
     position: relative;
-    padding: 0;
+    /*padding: 0;*/
     padding-bottom: 2.5em;
     overflow:hidden;
     @include media($small-desktop) {
@@ -158,8 +159,7 @@
     }
 
     ::-webkit-scrollbar-thumb {
-        background: darken($colorQuin,3);
-        border-radius: 1em;
+        background: $brand-secondary;
     }
 
     ::-webkit-scrollbar-track {
